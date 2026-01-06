@@ -1,0 +1,73 @@
+/* 1. Import Satoshi Font */
+@import url("https://api.fontshare.com/v2/css?f[]=satoshi@700,500,400&display=swap");
+
+/* 2. Tailwind base styles */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 3. Global Theme Setup */
+html,
+body {
+  font-family: "Satoshi", "Inter", sans-serif;
+  background: linear-gradient(135deg, #0f0f0f, #1a1a1a, #2c2c2c);
+  color: white;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+/* 4. Hide Scrollbar */
+.HideScrollBar::-webkit-scrollbar {
+  display: none;
+}
+.HideScrollBar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* 5. Premium Left Line Accent */
+.premium-line {
+  position: relative;
+  padding-left: 2rem;
+}
+.premium-line::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.5rem;
+  width: 4px;
+  height: 80%;
+  background: linear-gradient(to bottom, #ff00cc, #3333ff);
+  border-radius: 2px;
+}
+
+/* 6. Fade-in Animation */
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* small: hide scrollbar for cleaner look */
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* ensure duplicated track items line up */
+.marquee-row { position: relative; overflow: hidden; }
+.marquee-inner { display: flex; gap: 20px; align-items: flex-start; }
+
+
+@font-face {
+  font-family: melody;
+  src: url("/fonts/BLMelody-Bold.otf");
+}
+@font-face {
+  font-family: face2;
+  src: url("/fonts/NeutralFaceBold.otf");
+}
