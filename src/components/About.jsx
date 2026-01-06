@@ -266,9 +266,11 @@ const About = () => {
         <motion.h3 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} className="mb-6 text-2xl font-bold">Meet The Team</motion.h3>
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-4">
           {[
-          { img: team1, name: "Mr. Venendra Kumar", role: "Tech Lead Engineer" },
-  { img: team2, name: "Miss. Neelu B.", role: "Director & Ceo" },
+            { img: team2, name: "Miss. Neelu B.", role: "Director & CEO" },
+            
   { img: team2  , name: "Khusbhu Parihar", role: "Director" },
+          { img: team1, name: "Mr. Venendra Kumar", role: "Tech Lead Engineer" },
+  
 
   // Newly added members
   { img: team2, name: "Miss. Swati ", role: "UI  UX Designer &  Analyst" },
