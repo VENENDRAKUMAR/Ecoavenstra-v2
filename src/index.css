@@ -1,73 +1,98 @@
-/* 1. Import Satoshi Font */
-@import url("https://api.fontshare.com/v2/css?f[]=satoshi@700,500,400&display=swap");
+@import url("https://api.fontshare.com/v2/css?f[]=satoshi@900,700,500,400&display=swap");
 
-/* 2. Tailwind base styles */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* 3. Global Theme Setup */
-html,
+:root {
+  --bg-color: #fafafa;
+  --text-color: #0a0a0a;
+  --accent-gradient: linear-gradient(135deg, #22d3ee, #818cf8, #c084fc);
+}
+
+.dark {
+  --bg-color: #050505;
+  --text-color: #ffffff;
+}
+
 body {
-  font-family: "Satoshi", "Inter", sans-serif;
-  background: linear-gradient(135deg, #0f0f0f, #1a1a1a, #2c2c2c);
-  color: white;
+  font-family: "Satoshi", sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.5s ease, color 0.5s ease;
   overflow-x: hidden;
-  scroll-behavior: smooth;
 }
 
-/* 4. Hide Scrollbar */
-.HideScrollBar::-webkit-scrollbar {
-  display: none;
-}
-.HideScrollBar {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
+/* Modern Bento Card Style */
+.bento-card {
+  @apply rounded-[2.5rem] border transition-all duration-500 backdrop-blur-md;
+  background: var(--resolved-card-bg);
 }
 
-/* 5. Premium Left Line Accent */
-.premium-line {
-  position: relative;
-  padding-left: 2rem;
-}
-.premium-line::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0.5rem;
-  width: 4px;
-  height: 80%;
-  background: linear-gradient(to bottom, #ff00cc, #3333ff);
-  border-radius: 2px;
+.dark .bento-card {
+  @apply bg-white/5 border-white/10 hover:border-white/20 hover:bg-white/[0.07];
 }
 
-/* 6. Fade-in Animation */
-.fade-in {
-  opacity: 0;
-  transform: translateY(30px);
-  animation: fadeInUp 0.8s ease-out forwards;
-}
-@keyframes fadeInUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.light .bento-card {
+  @apply bg-black/5 border-black/10 hover:border-black/20 hover:bg-black/[0.07];
 }
 
-/* small: hide scrollbar for cleaner look */
+/* Custom Fonts Integration */
+.font-face-2 { font-family: "face2", sans-serif; }
+.font-melody { font-family: "melody", sans-serif; }
+
+/* Infinite Marquee */
+.marquee-text {
+  @apply text-6xl md:text-9xl font-black uppercase italic tracking-tighter opacity-10;
+  -webkit-text-stroke: 1px currentColor;
+  color: transparent;
+}
+
+.marquee-text:hover {
+  @apply opacity-100;
+  color: currentColor;
+  -webkit-text-stroke: 0px;
+}
+
+/* Hide Scrollbar */
 .no-scrollbar::-webkit-scrollbar { display: none; }
 .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
 
-/* ensure duplicated track items line up */
-.marquee-row { position: relative; overflow: hidden; }
-.marquee-inner { display: flex; gap: 20px; align-items: flex-start; }
 
-
-@font-face {
-  font-family: melody;
-  src: url("/fonts/BLMelody-Bold.otf");
+/* Noise Texture Overlay */
+.noise-bg::before {
+  content: "";
+  position: fixed;
+  top: 0; left: 0; width: 100vw; height: 100vh;
+  background: url('https://grainy-gradients.vercel.app/noise.svg');
+  opacity: 0.05;
+  pointer-events: none;
+  z-index: 99;
 }
-@font-face {
-  font-family: face2;
-  src: url("/fonts/NeutralFaceBold.otf");
+
+/* Sophisticated Typography */
+.hero-title {
+  font-family: 'face2', sans-serif;
+  letter-spacing: -0.04em;
+  line-height: 0.85;
+}
+
+/* Magnetic Button Animation */
+.btn-premium {
+  @apply relative overflow-hidden transition-all duration-500 ease-out;
+}
+.btn-premium::after {
+  content: "";
+  @apply absolute inset-0 bg-current opacity-0 transition-opacity duration-300;
+}
+.btn-premium:hover::after {
+  @apply opacity-10;
+}
+
+/* Glass Card Refraction */
+.glass-card {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
 }

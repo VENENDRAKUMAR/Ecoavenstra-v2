@@ -1,8 +1,12 @@
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { Code, Layout, ShoppingCart, Smartphone, Globe, CheckCircle, XCircle, Zap, TrendingUp, DollarSign } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { 
+  Code, Layout, ShoppingCart, Smartphone, Globe, 
+  CheckCircle, XCircle, Zap, TrendingUp, DollarSign,
+  ArrowRight, Sparkles, ShieldCheck, Clock
+} from 'lucide-react';
 
-// --- Configuration Data ---
+// --- Configuration Data (Content Same Rakhha Hai) ---
 const features = [
   {
     name: 'Full-Stack Web Development',
@@ -12,7 +16,7 @@ const features = [
     pricing: { BASIC: '₹49,999', PREMIUM: '₹99,999', CUSTOMIZE: 'Quote Available' },
     includedInPlans: ['BASIC', 'PREMIUM', 'CUSTOMIZE'],
     offer: '🚀 Complimentary SEO & Speed Optimization Audit with PREMIUM projects.',
-    days:'Built Right. Delivered On Time – 6 Month Guarantee.'
+    days: 'Built Right. Delivered On Time – 6 Month Guarantee.'
   },
   {
     name: 'High-Converting Landing Pages',
@@ -22,7 +26,7 @@ const features = [
     pricing: { BASIC: '₹24,999', PREMIUM: '₹49,999', CUSTOMIZE: 'Quote Available' },
     includedInPlans: ['BASIC', 'PREMIUM', 'CUSTOMIZE'],
     offer: '🤝 Startup Support: Get 10% off your first campaign page.',
-       days:'Built Right. Delivered On Time – 1 Month Guarantee.'
+    days: 'Built Right. Delivered On Time – 1 Month Guarantee.'
   },
   {
     name: 'Custom Internal Web Solutions',
@@ -32,7 +36,7 @@ const features = [
     pricing: { PREMIUM: '₹1,19,999', CUSTOMIZE: 'Quote Available' },
     includedInPlans: ['PREMIUM', 'CUSTOMIZE'],
     offer: '📞 Free 1-hour strategy consultation to map out your digital requirements.',
-       days:'Built Right. Delivered On Time – 6-12  Month Guarantee.'
+    days: 'Built Right. Delivered On Time – 6-12 Month Guarantee.'
   },
   {
     name: 'Complex SaaS & Web Applications',
@@ -42,7 +46,7 @@ const features = [
     pricing: { PREMIUM: '₹1,49,999', CUSTOMIZE: 'Quote Available' },
     includedInPlans: ['PREMIUM', 'CUSTOMIZE'],
     offer: '✨ Early Adopter Discount: Flat ₹10,000 off on your first major app development contract.',
-       days:'Built Right. Delivered On Time – 12-18 Month Guarantee.'
+    days: 'Built Right. Delivered On Time – 12-18 Month Guarantee.'
   },
   {
     name: 'End-to-End eCommerce Platforms',
@@ -52,208 +56,192 @@ const features = [
     pricing: { BASIC: '₹99,999', PREMIUM: '₹1,99,999', CUSTOMIZE: 'Quote Available' },
     includedInPlans: ['BASIC', 'PREMIUM', 'CUSTOMIZE'],
     offer: '💳 Free Secure Payment Gateway Integration included.',
-       days:'Built Right. Delivered On Time – 12 Month Guarantee.'
+    days: 'Built Right. Delivered On Time – 12 Month Guarantee.'
   },
 ];
-
-// --- Fading and Staggered Motion Variants ---
-const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.1,
-      delayChildren: 0.2,
-    },
-  },
-};
-
-const itemVariants = {
-  hidden: { y: 20, opacity: 0 },
-  visible: {
-    y: 0,
-    opacity: 1,
-    transition: { type: 'spring', stiffness: 100, damping: 20 },
-  },
-};
-
-// --- Custom Components ---
-
-const SparkleOffer = ({ children }) => (
-    <div className="relative p-4 bg-gradient-to-r from-emerald-600 to-cyan-600 text-black rounded-xl font-bold text-base shadow-2xl flex items-center space-x-3 overflow-hidden">
-        {/* Sparkle Overlay Effect */}
-        <div className="absolute inset-0 z-0 opacity-50 pointer-events-none">
-            <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_farthest-corner_at_center_top,_rgba(255,255,255,0.4)_0%,_transparent_50%)] animate-pulse"></div>
-        </div>
-        <Zap size={20} className="flex-shrink-0 relative z-10"/>
-        <span className="relative z-10">{children}</span>
-    </div>
-);
-
-const PlanIndicator = ({ plan, selectedFeature }) => {
-    const included = selectedFeature.includedInPlans.includes(plan);
-    const Icon = included ? CheckCircle : XCircle;
-    const colorClass = included ? 'text-emerald-400' : 'text-red-400';
-    const isAvailable = selectedFeature.pricing[plan] && selectedFeature.pricing[plan] !== 'Quote Available';
-
-    return (
-        <span className={`inline-flex items-center justify-center ${colorClass}`}>
-            <Icon size={16} className={isAvailable ? '' : 'opacity-40'} />
-        </span>
-    );
-};
-
 
 const PlansHome = () => {
   const [selectedFeature, setSelectedFeature] = useState(features[0]);
 
   return (
-    <section className="bg-gradient-to-b from-[#000000] to-[#0a0a0a] text-white py-24 px-6 font-sans">
+    <section className="relative bg-[#030303] text-white py-32 px-6 overflow-hidden">
+      
+      {/* --- PREMIUM BACKGROUND AMBIENCE --- */}
+      <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-emerald-600/10 blur-[150px] rounded-full animate-pulse pointer-events-none" />
+      <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-cyan-600/10 blur-[150px] rounded-full pointer-events-none" />
+
+      <div className="max-w-7xl mx-auto relative z-10">
         
-        {/* Global Particle/Glow Background Effect */}
-        <div className="absolute inset-0 opacity-5 pointer-events-none z-0">
-            <div className="absolute w-[80%] h-[80%] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full bg-emerald-500/10 blur-[150px]"></div>
-            <div className="absolute w-[60%] h-[60%] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full bg-cyan-500/10 blur-[100px]"></div>
+        {/* Header Section */}
+        <div className="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
+          <motion.div initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} className="max-w-2xl">
+            <span className="text-emerald-500 font-mono text-xs uppercase tracking-[0.5em] mb-4 block">
+              // Pricing & Value
+            </span>
+            <h2 className="text-5xl md:text-7xl font-black tracking-tighter leading-[0.9]">
+              INVEST IN <br /> 
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-400">YOUR GROWTH.</span>
+            </h2>
+          </motion.div>
+          <p className="text-gray-500 max-w-sm text-sm md:text-base leading-relaxed border-l border-emerald-500/30 pl-6">
+            Transparent pricing models designed to scale with your business goals. No hidden fees, just results.
+          </p>
         </div>
-        
-        <div className="max-w-7xl mx-auto relative z-10">
-            {/* Header */}
-            <motion.div
-                initial={{ opacity: 0, y: -20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8 }}
-                className="mb-16 text-center"
-            >
-                <h2 className="text-4xl md:text-6xl font-extrabold mb-4 leading-tight">
-                    Our Investment. <span className="text-emerald-400 block sm:inline">Your Growth.</span>
-                </h2>
-                <p className="text-gray-400 max-w-3xl mx-auto text-lg">
-                    Transparent, value-driven pricing across all digital services. See what you get.
-                </p>
-            </motion.div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-4 gap-12 items-start">
-                
-                {/* 1. Left Side - Compact Grid Service Selector */}
-                <motion.div
-                    variants={containerVariants}
-                    initial="hidden"
-                    animate="visible"
-                    className="lg:col-span-1"
-                >
-                    <div className="bg-gray-900/60 p-6 rounded-3xl border border-gray-800 backdrop-blur-md shadow-2xl space-y-3">
-                        <h3 className="text-xl font-bold text-white mb-4 border-b border-gray-700/50 pb-3 flex items-center space-x-2">
-                            <TrendingUp size={20} className="text-emerald-400"/>
-                            <span>Digital Services Menu</span>
-                        </h3>
-                        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-1 gap-3"> {/* 2-column grid on mobile/tablet */}
-                            {features.map((feature, index) => (
-                                <motion.div
-                                    key={index}
-                                    variants={itemVariants}
-                                    whileHover={{ scale: 1.05, boxShadow: '0 0 15px rgba(52, 211, 153, 0.2)' }}
-                                    whileTap={{ scale: 0.98 }}
-                                    onClick={() => setSelectedFeature(feature)}
-                                    className={`flex flex-col items-center justify-center text-center cursor-pointer p-4 rounded-xl transition-all duration-300 border ${
-                                        selectedFeature.name === feature.name
-                                            ? 'bg-emerald-600/15 border-emerald-500/70 text-emerald-300 shadow-md shadow-emerald-500/20'
-                                            : 'bg-gray-800/50 border-gray-800 hover:border-gray-700 text-gray-400 hover:text-white'
-                                    }`}
-                                >
-                                    <feature.icon size={32} className={selectedFeature.name === feature.name ? 'text-emerald-400' : 'text-gray-500'} />
-                                    <h3 className="text-sm font-semibold leading-snug mt-2">{feature.name.replace(' Development', '').replace(' Platforms', '')}</h3>
-                                    <p className="text-xs font-bold text-gray-500 mt-1 flex items-center space-x-1">
-                                        <DollarSign size={10} />
-                                        <span>From {feature.startingPrice}</span>
-                                    </p>
-                                </motion.div>
-                            ))}
-                        </div>
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+          
+          {/* 1. LEFT SIDE - SERVICE NAVIGATION (Bento Menu) */}
+          <div className="lg:col-span-4 space-y-4">
+            <div className="bg-white/[0.03] border border-white/10 rounded-[2.5rem] p-6 backdrop-blur-xl">
+              <h3 className="text-xs font-bold text-gray-500 uppercase tracking-widest mb-6 px-2 flex items-center gap-2">
+                <TrendingUp size={14} className="text-emerald-500" /> Select Service
+              </h3>
+              <div className="flex flex-col gap-3">
+                {features.map((feature, index) => (
+                  <motion.div
+                    key={index}
+                    whileHover={{ x: 10 }}
+                    onClick={() => setSelectedFeature(feature)}
+                    className={`group cursor-pointer p-5 rounded-2xl flex items-center justify-between transition-all duration-500 border ${
+                      selectedFeature.name === feature.name
+                        ? 'bg-emerald-500 text-black border-emerald-500 shadow-[0_10px_30px_rgba(16,185,129,0.3)]'
+                        : 'bg-white/5 border-white/5 hover:border-white/20'
+                    }`}
+                  >
+                    <div className="flex items-center gap-4">
+                      <feature.icon size={20} className={selectedFeature.name === feature.name ? 'text-black' : 'text-emerald-500'} />
+                      <span className="text-sm font-bold tracking-tight uppercase">
+                        {feature.name.split(' ')[0]} {feature.name.split(' ')[1] || ''}
+                      </span>
                     </div>
-                </motion.div>
-
-                {/* 2. Right Side - Focused Detail Card */}
-                <motion.div
-                    key={selectedFeature.name}
-                    initial={{ opacity: 0, x: 40 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.8 }}
-                    className="lg:col-span-3 h-full"
-                >
-                    <div className="p-8 md:p-12 rounded-3xl h-full bg-[#141414] border border-emerald-700/30 shadow-[0_0_60px_rgba(52,211,153,0.1)] relative overflow-hidden">
-                        
-                        {/* Detail Card Content */}
-                        <div className="relative z-10">
-                            {/* Header */}
-                            <header className="mb-8 border-b border-gray-700/50 pb-6">
-                                <div className="flex items-center space-x-4 mb-2">
-                                    <selectedFeature.icon size={48} className="text-emerald-400 p-2 border border-emerald-600/50 rounded-lg bg-gray-900"/>
-                                    <h3 className="text-4xl font-extrabold text-white">{selectedFeature.name}</h3>
-                                </div>
-                                <p className="text-gray-300 text-lg mt-3">{selectedFeature.description}</p>
-                                 <p className="text-xl font-semibold text-lime-400">{selectedFeature.days}</p>
-
-                            </header>
-
-                            {/* Pricing Tiers */}
-                            <motion.div 
-                                variants={containerVariants}
-                                initial="hidden"
-                                animate="visible"
-                                className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8"
-                            >
-                                {['BASIC', 'PREMIUM', 'CUSTOMIZE'].map((plan) => (
-                                    <motion.div
-                                        key={plan}
-                                        variants={itemVariants}
-                                        className={`p-6 rounded-xl border-2 transition-all duration-300 min-h-[150px] ${
-                                            selectedFeature.includedInPlans.includes(plan)
-                                                ? 'bg-gray-800/70 border-emerald-600/50 shadow-xl shadow-emerald-900/40'
-                                                : 'bg-gray-800/40 border-gray-700/50 opacity-60'
-                                        }`}
-                                    >
-                                        <div className="flex items-center justify-between mb-3 border-b border-gray-700/50 pb-2">
-                                            <h5 className="text-xl font-bold uppercase text-emerald-300">{plan}</h5>
-                                            <PlanIndicator plan={plan} selectedFeature={selectedFeature} />
-                                        </div>
-                                        <p className={`text-3xl font-extrabold mt-2 ${selectedFeature.includedInPlans.includes(plan) ? 'text-white' : 'text-gray-400'}`}>
-                                            {selectedFeature.pricing[plan] || 'N/A'}
-                                        </p>
-                                        <p className="text-xs text-gray-500 mt-1">
-                                            {plan === 'CUSTOMIZE' ? 'Solution Tailored' : 'Fixed Starting Fee'}
-                                        </p>
-                                    </motion.div>
-                                ))}
-                            </motion.div>
-
-                            {/* Call to Action & Offer */}
-                            <div className="mt-10 pt-6 border-t border-gray-700/50">
-                                {selectedFeature.offer && (
-                                    <motion.div
-                                        initial={{ y: 10, opacity: 0 }}
-                                        animate={{ y: 0, opacity: 1 }}
-                                        transition={{ delay: 0.6 }}
-                                    >
-                                        <SparkleOffer>
-                                            {selectedFeature.offer}
-                                        </SparkleOffer>
-                                    </motion.div>
-                                )}
-
-                                <button 
-                                    className="mt-6 w-full py-4 text-lg font-extrabold rounded-xl transition-all duration-300 
-                                    bg-emerald-500 text-black shadow-lg shadow-emerald-500/50 hover:bg-emerald-400 hover:shadow-emerald-500/80"
-                                >
-                                    Initiate Project Discussion
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </motion.div>
+                    <ArrowRight size={16} className={`opacity-0 group-hover:opacity-100 transition-all ${selectedFeature.name === feature.name ? 'text-black' : 'text-emerald-500'}`} />
+                  </motion.div>
+                ))}
+              </div>
             </div>
+
+            {/* Support/Guarantee Card */}
+            <div className="bg-gradient-to-br from-emerald-600/20 to-transparent border border-emerald-500/20 rounded-[2rem] p-8">
+              <ShieldCheck className="text-emerald-500 mb-4" size={32} />
+              <h4 className="font-bold text-lg mb-2 tracking-tight">Ecoavenstra Trust</h4>
+              <p className="text-xs text-gray-400 leading-relaxed">Every project includes a dedicated manager and 24/7 technical support post-launch.</p>
+            </div>
+          </div>
+
+          {/* 2. RIGHT SIDE - DYNAMIC DISPLAY CARD */}
+          <div className="lg:col-span-8 h-full">
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={selectedFeature.name}
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 1.05 }}
+                transition={{ duration: 0.4 }}
+                className="bg-zinc-900/40 border border-white/10 rounded-[3rem] h-full flex flex-col p-8 md:p-14 relative overflow-hidden backdrop-blur-md"
+              >
+                {/* Background Decor */}
+                <div className="absolute top-0 right-0 p-10 opacity-5 pointer-events-none">
+                  <selectedFeature.icon size={250} />
+                </div>
+
+                {/* Content Header */}
+                <div className="relative z-10 mb-12">
+                  <div className="flex flex-wrap items-center gap-4 mb-6">
+                    <div className="px-4 py-1.5 bg-emerald-500/10 border border-emerald-500/20 rounded-full text-[10px] font-bold tracking-[0.2em] text-emerald-400 uppercase">
+                      Featured Solution
+                    </div>
+                    <div className="flex items-center gap-2 text-gray-500 text-[10px] font-bold tracking-[0.2em] uppercase">
+                      <Clock size={12} /> {selectedFeature.days.split('–')[1]}
+                    </div>
+                  </div>
+                  <h3 className="text-4xl md:text-5xl font-black tracking-tighter mb-6 uppercase italic">
+                    {selectedFeature.name}
+                  </h3>
+                  <p className="text-gray-400 text-lg leading-relaxed max-w-2xl">
+                    {selectedFeature.description}
+                  </p>
+                </div>
+
+                {/* PRICING GRID */}
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-10 relative z-10">
+                  {['BASIC', 'PREMIUM', 'CUSTOMIZE'].map((plan) => {
+                    const isIncluded = selectedFeature.includedInPlans.includes(plan);
+                    const price = selectedFeature.pricing[plan];
+                    
+                    return (
+                      <div 
+                        key={plan}
+                        className={`group p-8 rounded-[2rem] border transition-all duration-500 flex flex-col justify-between ${
+                          isIncluded 
+                            ? 'bg-white/5 border-emerald-500/30 hover:border-emerald-500 hover:bg-emerald-500/5' 
+                            : 'bg-black/20 border-white/5 opacity-40'
+                        }`}
+                      >
+                        <div>
+                          <div className="flex justify-between items-center mb-6">
+                            <span className="text-[10px] font-bold tracking-[0.3em] text-emerald-500">{plan}</span>
+                            {isIncluded ? <CheckCircle size={14} className="text-emerald-500" /> : <XCircle size={14} className="text-gray-600" />}
+                          </div>
+                          <div className="text-2xl font-black tracking-tight mb-2">
+                            {price || "N/A"}
+                          </div>
+                        </div>
+                        <p className="text-[10px] text-gray-500 uppercase font-bold tracking-widest mt-4">
+                          {plan === 'CUSTOMIZE' ? 'Scalable Plan' : 'Flat Pricing'}
+                        </p>
+                      </div>
+                    );
+                  })}
+                </div>
+
+                {/* OFFER & CTA */}
+                <div className="mt-auto relative z-10 flex flex-col md:flex-row items-center gap-6">
+                  {selectedFeature.offer && (
+                    <motion.div 
+                      animate={{ y: [0, -5, 0] }}
+                      transition={{ duration: 4, repeat: Infinity }}
+                      className="flex-1 p-6 bg-gradient-to-r from-emerald-600/20 to-cyan-600/20 border border-emerald-500/30 rounded-2xl flex items-center gap-4 group hover:border-emerald-500 transition-all"
+                    >
+                      <Sparkles className="text-emerald-400 shrink-0 group-hover:rotate-12 transition-transform" />
+                      <p className="text-xs md:text-sm font-bold text-emerald-100 italic leading-snug">
+                        {selectedFeature.offer}
+                      </p>
+                    </motion.div>
+                  )}
+                  
+                  <button className="w-full md:w-auto px-10 py-6 bg-white text-black font-black text-xs uppercase tracking-[0.3em] rounded-2xl hover:bg-emerald-500 transition-all shadow-[0_20px_40px_rgba(0,0,0,0.3)] hover:shadow-emerald-500/20 active:scale-95 flex items-center justify-center gap-3">
+                    Start Project <SendIcon size={14} />
+                  </button>
+                </div>
+
+                {/* Visual "Scanline" Animation */}
+                <div className="absolute inset-0 pointer-events-none overflow-hidden opacity-10">
+                  <div className="w-full h-[1px] bg-emerald-500 animate-scan" />
+                </div>
+              </motion.div>
+            </AnimatePresence>
+          </div>
         </div>
+      </div>
+
+      <style jsx global>{`
+        @keyframes scan {
+          0% { transform: translateY(-100%); }
+          100% { transform: translateY(1000%); }
+        }
+        .animate-scan {
+          animation: scan 8s linear infinite;
+        }
+      `}</style>
     </section>
   );
 };
+
+const SendIcon = ({ size }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+    <line x1="22" y1="2" x2="11" y2="13"></line>
+    <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+  </svg>
+);
 
 export default PlansHome;
