@@ -1,31 +1,34 @@
+"use client"
+
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { Quote, Star, ShieldCheck } from 'lucide-react';
 
 const testimonials = [
   {
-    text: "Ecoavenstra has been instrumental in helping us scale our business operations...",
-    name: "Ravi Kumar",
-    work: "Owner, RK Constructions",
+    text: "ecoavenstra has been instrumental in helping us scale our business operations. their technical depth and cinematic approach to ui is unmatched.",
+    name: "ravi kumar",
+    work: "owner, rk constructions",
   },
   {
-    text: "Working with Ecoavenstra was a refreshing experience...",
-    name: "Amanda Johnson",
-    work: "Project Manager, GreenTech Innovations",
+    text: "working with ecoavenstra was a refreshing experience. they transformed our complex vision into a seamless, high-performance digital tool.",
+    name: "amanda johnson",
+    work: "project manager, greentech",
   },
   {
-    text: "The team at Ecoavenstra has truly helped me bring my vision to life...",
-    name: "Ankit Mehta",
-    work: "Entrepreneur, Ankit Fashions",
+    text: "the team truly helped me bring my vision to life. the emotionally resonant design they built is beyond what i imagined.",
+    name: "ankit mehta",
+    work: "entrepreneur, ankit fashions",
   },
   {
-    text: "Ecoavenstra provided exceptional service and delivered a solution...",
-    name: "Sophie Martin",
-    work: "CEO, Blue Horizon Ventures",
+    text: "exceptional service and delivered a solution that actually works for our enterprise scale. highly professional team.",
+    name: "sophie martin",
+    work: "ceo, blue horizon ventures",
   },
   {
-    text: "Ecoavenstra’s team is highly skilled and professional...",
-    name: "Rajesh Sharma",
-    work: "CTO, Tech Innovators Pvt Ltd",
+    text: "ecoavenstra’s team is highly skilled. they build trust through tailored tech and cinematic ui that speaks for itself.",
+    name: "rajesh sharma",
+    work: "cto, tech innovators pvt ltd",
   },
 ];
 
@@ -40,76 +43,111 @@ const Recommendation = () => {
   }, []);
 
   return (
-    <section className="relative py-20 bg-[#0a0a0a] overflow-hidden">
-      {/* Background Glow */}
-      <div className="absolute inset-0 z-0 pointer-events-none">
-        <div className="absolute top-0 left-0 w-72 h-72 bg-green-500 opacity-20 blur-3xl rounded-full animate-pulse" />
-        <div className="absolute bottom-0 right-0 w-72 h-72 bg-blue-500 opacity-20 blur-3xl rounded-full animate-pulse" />
+    <section className="relative py-24 md:py-40 bg-[#030303] overflow-hidden">
+      
+      {/* --- CINEMATIC AMBIENCE --- */}
+      <div className="absolute top-0 left-0 w-full h-full pointer-events-none">
+        <div className="absolute top-[-10%] left-[-10%] w-[500px] h-[500px] bg-blue-600/10 blur-[120px] rounded-full" />
+        <div className="absolute bottom-[-10%] right-[-10%] w-[500px] h-[500px] bg-blue-900/10 blur-[120px] rounded-full" />
       </div>
 
-      <div className="relative z-10 container mx-auto px-6">
-        <div className="flex flex-col md:flex-row items-center justify-between gap-12">
-          {/* Left Side */}
+      <div className="relative z-10 max-w-7xl mx-auto px-6">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 md:gap-24 items-center">
+          
+          {/* LEFT SIDE: BRAND AUTHORITY */}
           <motion.div
-            initial={{ opacity: 0, x: -40 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 1 }}
-            className="w-full md:w-1/2"
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 1, ease: "easeOut" }}
+            className="space-y-8"
           >
-            <h2 className="text-green-400 text-sm font-bold uppercase tracking-widest">Testimonial</h2>
-            <h3 className="text-4xl sm:text-5xl font-extrabold text-white mt-2 mb-4 leading-tight">
-              Trust We Earn
-            </h3>
-            <p className="text-gray-300 text-lg leading-relaxed">
-              We serve 100+ businesses across India with 100% satisfaction. At Ecoavenstra, we build trust through tailored tech, cinematic UI, and emotionally resonant design. Let your vision speak through our code.
+            <div>
+              <span className="text-blue-500 font-mono text-[10px] tracking-[0.5em] uppercase mb-4 block underline underline-offset-8 decoration-blue-500/20">
+       What People Say
+              </span>
+              <h3 className="text-5xl md:text-7xl font-extralight text-white leading-tight lowercase tracking-tighter">
+                trust we <span className="text-white/20 italic font-light">earn.</span>
+              </h3>
+            </div>
+            
+            <p className="text-white/50 text-base md:text-lg leading-relaxed font-light lowercase max-w-md">
+              we serve <span className="text-white font-medium">95% businesses</span> across india with <span className="text-blue-500 font-medium font-mono text-sm tracking-normal">98% satisfaction</span>. at ecoavenstra, we build trust through tailored tech, cinematic ui, and emotionally resonant design.
             </p>
-          </motion.div>
 
-          {/* Right Side */}
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 0.3 }}
-            className="w-full md:w-1/2 bg-white/5 backdrop-blur-lg border border-white/10 rounded-2xl p-8 shadow-[0_0_40px_rgba(0,255,255,0.1)]"
-          >
-            <AnimatePresence mode="wait">
-              <motion.div
-                key={current}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -20 }}
-                transition={{ duration: 0.5 }}
-              >
-                <h4 className="text-green-400 text-sm font-semibold uppercase tracking-wide">Our Happy Clients</h4>
-                <h5 className="text-2xl font-bold text-white mt-2 mb-4">What Clients Say</h5>
-                <p className="text-gray-300 leading-relaxed text-[17px]">{testimonials[current].text}</p>
-                <div className="mt-6">
-                  <p className="text-white font-bold text-lg">{testimonials[current].name}</p>
-                  <p className="text-gray-400">{testimonials[current].work}</p>
-                  <div className="flex mt-2">
-                    {[...Array(5)].map((_, i) => (
-                      <svg key={i} className="w-5 h-5 text-green-400" fill="currentColor" viewBox="0 0 20 20">
-                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.198 3.686a1 1 0 00.95.69h3.887c.969 0 1.371 1.24.588 1.81l-3.148 2.324a1 1 0 00-.364 1.118l1.198 3.686c.3.921-.755 1.688-1.54 1.118l-3.148-2.324a1 1 0 00-1.175 0l-3.148 2.324c-.785.57-1.84-.197-1.54-1.118l1.198-3.686a1 1 0 00-.364-1.118L2.228 9.113c-.783-.57-.38-1.81.588-1.81h3.887a1 1 0 00.95-.69l1.198-3.686z" />
-                      </svg>
-                    ))}
-                  </div>
-                </div>
-              </motion.div>
-            </AnimatePresence>
-
-            {/* Dots */}
-            <div className="flex justify-center mt-6">
-              {testimonials.map((_, i) => (
-                <button
-                  key={i}
-                  className={`w-3 h-3 rounded-full mx-1 transition-all duration-300 ${
-                    i === current ? 'bg-green-400 scale-125' : 'bg-gray-500'
-                  }`}
-                  onClick={() => setCurrent(i)}
-                ></button>
-              ))}
+            {/* Stats Badge */}
+            <div className="flex items-center gap-8 pt-4">
+              <div className="space-y-1">
+                <p className="text-2xl font-light text-white">98%</p>
+                <p className="text-[9px] font-mono text-white/30 uppercase tracking-widest">success rate</p>
+              </div>
+              <div className="w-[1px] h-10 bg-white/10" />
+              <div className="space-y-1">
+                <p className="text-2xl font-light text-white">100+</p>
+                <p className="text-[9px] font-mono text-white/30 uppercase tracking-widest">brands served</p>
+              </div>
             </div>
           </motion.div>
+
+          {/* RIGHT SIDE: CINEMATIC TESTIMONIAL DISPLAY */}
+          <div className="relative group">
+            {/* Background Glass Plate */}
+            <div className="absolute inset-0 bg-white/[0.02] border border-white/5 backdrop-blur-3xl rounded-[3rem] -rotate-2 scale-105 transition-transform group-hover:rotate-0 duration-700" />
+            
+            <div className="relative bg-[#080808]/40 border border-white/10 backdrop-blur-2xl rounded-[3rem] p-8 md:p-14 shadow-2xl overflow-hidden min-h-[450px] flex flex-col justify-center">
+              
+              {/* Top Decor */}
+              <div className="absolute top-10 right-12 text-white/5">
+                <Quote size={80} strokeWidth={1} />
+              </div>
+
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={current}
+                  initial={{ opacity: 0, y: 20, filter: "blur(5px)" }}
+                  animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                  exit={{ opacity: 0, y: -20, filter: "blur(5px)" }}
+                  transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+                >
+                  <div className="flex gap-1 mb-8">
+                    {[...Array(5)].map((_, i) => (
+                      <Star key={i} size={14} className="fill-blue-600 text-blue-600" />
+                    ))}
+                  </div>
+
+                  <p className="text-xl md:text-2xl font-light text-white/90 leading-relaxed lowercase tracking-tight mb-10 italic">
+                    "{testimonials[current].text}"
+                  </p>
+
+                  <div className="flex items-center gap-4">
+                    <div className="w-12 h-12 rounded-full bg-blue-600/20 border border-blue-500/20 flex items-center justify-center text-blue-500">
+                      <ShieldCheck size={20} />
+                    </div>
+                    <div>
+                      <h4 className="text-lg font-medium text-white lowercase">{testimonials[current].name}</h4>
+                      <p className="text-[10px] font-mono text-white/30 uppercase tracking-[0.2em]">{testimonials[current].work}</p>
+                    </div>
+                  </div>
+                </motion.div>
+              </AnimatePresence>
+
+              {/* Progress Bars (Nav) */}
+              <div className="flex gap-3 mt-12">
+                {testimonials.map((_, i) => (
+                  <button
+                    key={i}
+                    onClick={() => setCurrent(i)}
+                    className="flex-1 h-[2px] bg-white/5 relative overflow-hidden"
+                  >
+                    <motion.div 
+                      className={`absolute inset-0 bg-blue-500 ${i === current ? 'opacity-100' : 'opacity-0'}`}
+                      animate={i === current ? { x: ["-100%", "0%"] } : { x: "-100%" }}
+                      transition={i === current ? { duration: 6, ease: "linear" } : {}}
+                    />
+                  </button>
+                ))}
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>

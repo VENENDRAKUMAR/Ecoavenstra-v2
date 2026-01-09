@@ -8,7 +8,7 @@ import "./Spinner.css";
 
 const categories = [
   { id: 1, title: "Full Time", count: "120+ Roles", trending: "STABLE GROWTH", color: "from-blue-600/20" },
-  { id: 2, title: "Internship", count: "45+ Openings", trending: "FAST TRACK", color: "from-purple-600/20" },
+  { id: 2, title: "Internship", count: "45+ Openings", trending: "FAST TRACK", color: "from-blue-600/20" },
   { id: 3, title: "Remote", count: "80+ Jobs", trending: "GLOBAL ACCESS", color: "from-emerald-600/20" },
 ];
 
@@ -71,15 +71,15 @@ const Jobs = () => {
             className="flex flex-col md:flex-row md:items-end justify-between gap-8"
           >
             <div>
-              <span className="text-blue-500 font-mono text-xs tracking-[0.5em] uppercase mb-4 block underline underline-offset-8">Career Protocol</span>
-              <h1 className="text-6xl md:text-[8vw] font-black uppercase tracking-tighter leading-[0.8]">
-                JOIN THE <br /> <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-white to-white/20 italic">FORCE.</span>
+              <span className="text-blue-500 font-mono text-xs tracking-[0.5em] capatalize mb-4 block underline underline-offset-8">Career Protocol</span>
+              <h1 className="text-4xl md:text-[8vw] font-lite capatalize tracking-tighter leading-[0.8]">
+                Join The  <br /> <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-white to-white/20 ">Team.</span>
               </h1>
             </div>
             <div className="flex gap-4">
               <div className="p-6 bg-white/5 border border-white/10 rounded-3xl backdrop-blur-xl">
-                 <p className="text-3xl font-bold">{filteredJobs.length}</p>
-                 <p className="text-[10px] text-white/40 uppercase tracking-widest font-mono">Live Opportunities</p>
+                 <p className="text-3xl font-lite">{filteredJobs.length}</p>
+                 <p className="text-[10px] text-white/40 capatalize tracking-widest font-mono">Live Opportunities</p>
               </div>
             </div>
           </motion.div>
@@ -97,13 +97,13 @@ const Jobs = () => {
             >
               <div className="flex flex-col h-full justify-between">
                 <div className="flex justify-between items-start">
-                  <span className="text-[10px] font-black text-blue-400 tracking-tighter bg-blue-500/10 px-3 py-1 rounded-full flex items-center gap-2">
+                  <span className="text-[10px] font-lite text-blue-400 tracking-tighter bg-blue-500/10 px-3 py-1 rounded-full flex items-center gap-2">
                     <FaFire /> {cat.trending}
                   </span>
                   <BsArrowRight className="opacity-0 group-hover:opacity-100 transition-all -translate-x-4 group-hover:translate-x-0" />
                 </div>
                 <div>
-                  <h3 className="text-2xl font-bold uppercase italic">{cat.title}</h3>
+                  <h3 className="text-2xl font-lite capatalize  ">{cat.title}</h3>
                   <p className="text-xs text-white/40 font-mono tracking-widest">{cat.count}</p>
                 </div>
               </div>
@@ -147,7 +147,7 @@ const Jobs = () => {
                 <div className="grid grid-cols-1 gap-3">
                   {['fullTime', 'partTime', 'Internship'].map((type) => (
                     <label key={type} className="flex items-center justify-between p-4 bg-white/5 border border-white/10 rounded-2xl cursor-pointer hover:bg-white/10 transition-all">
-                      <span className="text-xs font-bold uppercase tracking-widest text-white/60">
+                      <span className="text-xs font-lite capatalize tracking-widest text-white/60">
                          {type.replace('fullTime', 'Full-time').replace('partTime', 'Part-time')}
                       </span>
                       <input 
@@ -168,7 +168,7 @@ const Jobs = () => {
             <AnimatePresence mode="popLayout">
               {filteredJobs.length === 0 ? (
                 <div className="h-64 border border-dashed border-white/10 rounded-[3rem] flex items-center justify-center">
-                   <p className="text-white/20 font-mono italic">SYSTEM ERROR: NO ROLES FOUND</p>
+                   <p className="text-white/20 font-mono  ">SYSTEM ERROR: NO ROLES FOUND</p>
                 </div>
               ) : (
                 <div className="grid grid-cols-1 gap-6">
@@ -187,13 +187,13 @@ const Jobs = () => {
                              <BsBuilding className="text-white/20 group-hover:text-blue-500 transition-colors" />
                           </div>
                           <div>
-                            <p className="text-blue-500 font-mono text-[10px] tracking-widest uppercase mb-2">{job.companyName}</p>
-                            <h2 className="text-3xl font-black uppercase tracking-tighter italic">{job.jobTitle}</h2>
+                            <p className="text-blue-500 font-mono text-[10px] tracking-widest capatalize mb-2">{job.companyName}</p>
+                            <h2 className="text-3xl font-lite capatalize tracking-tighter  ">{job.jobTitle}</h2>
                             <div className="flex flex-wrap gap-3 mt-4">
-                              <span className="px-4 py-1.5 bg-white/5 rounded-full text-[10px] font-bold text-white/40 uppercase tracking-widest flex items-center gap-2 border border-white/5">
+                              <span className="px-4 py-1.5 bg-white/5 rounded-full text-[10px] font-lite text-white/40 capatalize tracking-widest flex items-center gap-2 border border-white/5">
                                 <BsGeoAlt /> {job.jobLocation}
                               </span>
-                              <span className="px-4 py-1.5 bg-blue-500/10 rounded-full text-[10px] font-bold text-blue-400 uppercase tracking-widest flex items-center gap-2 border border-blue-500/20">
+                              <span className="px-4 py-1.5 bg-blue-500/10 rounded-full text-[10px] font-lite text-blue-400 capatalize tracking-widest flex items-center gap-2 border border-blue-500/20">
                                 <BsClock /> {job.jobType}
                               </span>
                             </div>
@@ -203,10 +203,10 @@ const Jobs = () => {
                         <div className="w-full md:w-auto flex flex-col items-end gap-4">
                           <div className="text-right">
                              <p className="text-xs font-mono text-white/30 tracking-widest mb-1">OFFER RANGE</p>
-                             <p className="text-xl font-bold italic tracking-tighter">{job.salaryRange}</p>
+                             <p className="text-xl font-lite   tracking-tighter">{job.salaryRange}</p>
                           </div>
                           <Link to={`/jobs/job/${job.id}`} className="w-full">
-                            <button className="w-full md:w-48 bg-white text-black font-black uppercase italic py-4 rounded-2xl hover:bg-blue-600 hover:text-white transition-all transform active:scale-95">
+                            <button className="w-full md:w-48 bg-white text-black font-lite capatalize   py-4 rounded-2xl hover:bg-blue-600 hover:text-white transition-all transform active:scale-95">
                               Apply Now
                             </button>
                           </Link>
@@ -226,7 +226,7 @@ const Jobs = () => {
 
 const FilterBox = ({ label, children }) => (
   <div className="space-y-4">
-    <h4 className="text-[10px] font-bold text-white/30 uppercase tracking-[0.4em] ml-2 flex items-center gap-2">
+    <h4 className="text-[10px] font-lite text-white/30 capatalize tracking-[0.4em] ml-2 flex items-center gap-2">
       <div className="w-1.5 h-1.5 bg-blue-500 rounded-full shadow-[0_0_8px_#3b82f6]" /> {label}
     </h4>
     {children}

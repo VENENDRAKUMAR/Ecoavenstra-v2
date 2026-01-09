@@ -17,8 +17,8 @@ const ContactUs = () => {
       
       {/* --- ENTERPRISE BACKGROUND MESH --- */}
       <div className="absolute inset-0 z-0">
-        {/* Deep Purple Radial Glow */}
-        <div className="absolute top-[-10%] left-[20%] w-[1000px] h-[600px] bg-purple-600/20 blur-[180px] rounded-full opacity-50" />
+        {/* Deep Blue Radial Glow */}
+        <div className="absolute top-[-10%] left-[20%] w-[1000px] h-[600px] bg-blue-600/20 blur-[180px] rounded-full opacity-50" />
         <div className="absolute bottom-[-10%] right-[10%] w-[800px] h-[500px] bg-indigo-600/20 blur-[150px] rounded-full opacity-30" />
         
         {/* Grid Overlay (Enterprise Look) */}
@@ -32,13 +32,13 @@ const ContactUs = () => {
           <motion.div 
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
-            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-purple-500/30 bg-purple-500/10 text-[10px] font-bold tracking-[0.2em] uppercase text-purple-400 mb-8"
+            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-blue-500/30 bg-blue-500/10 text-[10px] font-bold tracking-[0.2em] uppercase text-blue-400 mb-8"
           >
             <ShieldCheck size={14} /> Global Enterprise Solutions
           </motion.div>
           <h2 className="text-6xl md:text-8xl font-bold tracking-tight leading-[0.9] mb-8">
             Let’s build the <br /> 
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-purple-200 to-indigo-500">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-blue-200 to-indigo-500">
               Future of Web.
             </span>
           </h2>
@@ -66,7 +66,7 @@ const ContactUs = () => {
                   transition={{ delay: i * 0.1 }}
                   className="flex items-center gap-6 group"
                 >
-                  <div className="w-14 h-14 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-purple-400 group-hover:bg-purple-500 group-hover:text-white transition-all duration-500 shadow-xl shadow-purple-500/5">
+                  <div className="w-14 h-14 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-blue-400 group-hover:bg-blue-500 group-hover:text-white transition-all duration-500 shadow-xl shadow-blue-500/5">
                     {item.icon}
                   </div>
                   <div>
@@ -78,8 +78,8 @@ const ContactUs = () => {
             </div>
 
             {/* Client Proof / Trust Box */}
-            <div className="p-8 rounded-[2rem] bg-gradient-to-br from-purple-500/5 to-indigo-500/5 border border-white/5 backdrop-blur-md">
-                <div className="flex gap-1 text-purple-400 mb-4">
+            <div className="p-8 rounded-[2rem] bg-gradient-to-br from-blue-500/5 to-indigo-500/5 border border-white/5 backdrop-blur-md">
+                <div className="flex gap-1 text-blue-400 mb-4">
                     {[...Array(5)].map((_, i) => <Sparkles key={i} size={14} fill="currentColor" />)}
                 </div>
                 <p className="text-sm text-gray-400 leading-relaxed italic">
@@ -99,7 +99,7 @@ const ContactUs = () => {
             className="lg:col-span-7 relative group"
           >
             {/* Dynamic Glow behind form */}
-            <div className="absolute -inset-1 bg-gradient-to-r from-purple-600 to-indigo-600 rounded-[3rem] blur opacity-20 group-hover:opacity-40 transition duration-1000" />
+            <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-[3rem] blur opacity-20 group-hover:opacity-40 transition duration-1000" />
             
             <div className="relative bg-[#07070a] border border-white/10 rounded-[3rem] p-8 md:p-14 shadow-2xl overflow-hidden">
               
@@ -109,7 +109,7 @@ const ContactUs = () => {
                     initial={{ opacity: 0 }} animate={{ opacity: 1 }}
                     className="py-20 text-center"
                   >
-                    <CheckCircle2 size={60} className="text-purple-500 mx-auto mb-6" />
+                    <CheckCircle2 size={60} className="text-blue-500 mx-auto mb-6" />
                     <h3 className="text-3xl font-bold mb-2">Request Received</h3>
                     <p className="text-gray-500">An enterprise representative will contact you shortly.</p>
                   </motion.div>
@@ -121,7 +121,7 @@ const ContactUs = () => {
                         <input 
                           type="text" 
                           placeholder="Enter your name"
-                          className="w-full bg-white/[0.03] border border-white/10 rounded-2xl px-6 py-4 outline-none focus:border-purple-500/50 focus:bg-white/[0.05] transition-all"
+                          className="w-full bg-white/[0.03] border border-white/10 rounded-2xl px-6 py-4 outline-none focus:border-blue-500/50 focus:bg-white/[0.05] transition-all"
                           required
                         />
                       </div>
@@ -130,7 +130,7 @@ const ContactUs = () => {
                         <input 
                           type="email" 
                           placeholder="name@company.com"
-                          className="w-full bg-white/[0.03] border border-white/10 rounded-2xl px-6 py-4 outline-none focus:border-purple-500/50 focus:bg-white/[0.05] transition-all"
+                          className="w-full bg-white/[0.03] border border-white/10 rounded-2xl px-6 py-4 outline-none focus:border-blue-500/50 focus:bg-white/[0.05] transition-all"
                           required
                         />
                       </div>
@@ -141,7 +141,7 @@ const ContactUs = () => {
                       <textarea 
                         rows="4"
                         placeholder="Describe your project requirements..."
-                        className="w-full bg-white/[0.03] border border-white/10 rounded-2xl px-6 py-6 outline-none focus:border-purple-500/50 focus:bg-white/[0.05] transition-all resize-none"
+                        className="w-full bg-white/[0.03] border border-white/10 rounded-2xl px-6 py-6 outline-none focus:border-blue-500/50 focus:bg-white/[0.05] transition-all resize-none"
                         required
                       />
                     </div>
@@ -154,8 +154,8 @@ const ContactUs = () => {
                       <span className="relative z-10 flex items-center justify-center gap-3">
                         {status === 'loading' ? 'Processing...' : <>Initialize Project <Send size={16} /></>}
                       </span>
-                      <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-indigo-600 scale-x-0 group-hover/btn:scale-x-100 transition-transform origin-left duration-500" />
-                      <div className="absolute inset-0 group-hover/btn:bg-purple-600" /> {/* Fallback color */}
+                      <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-indigo-600 scale-x-0 group-hover/btn:scale-x-100 transition-transform origin-left duration-500" />
+                      <div className="absolute inset-0 group-hover/btn:bg-blue-600" /> {/* Fallback color */}
                     </button>
                   </form>
                 )}

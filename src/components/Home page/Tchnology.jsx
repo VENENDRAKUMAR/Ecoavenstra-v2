@@ -50,7 +50,7 @@ const Technology = () => {
         
         {/* Header */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-6xl font-black uppercase tracking-tighter italic">
+          <h2 className="text-4xl md:text-6xl tracking-tighter italic">
             Tech <span className="text-blue-500">Arsenal</span>
           </h2>
         </div>
@@ -67,12 +67,12 @@ const Technology = () => {
               className="relative group p-[2px] rounded-2xl overflow-hidden"
             >
               {/* --- OUTER NEON BORDER ANIMATION (Old Vibe) --- */}
-              <div className={`absolute inset-0 bg-gradient-to-r ${item.color === 'blue' ? 'from-blue-600' : item.color === 'green' ? 'from-green-600' : 'from-purple-600'} to-transparent opacity-20 group-hover:opacity-100 transition-opacity duration-500`} />
+              <div className={`absolute inset-0 bg-gradient-to-r ${item.color === 'blue' ? 'from-blue-600' : item.color === 'green' ? 'from-green-600' : 'from-blue-600'} to-transparent opacity-20 group-hover:opacity-100 transition-opacity duration-500`} />
 
               {/* --- MAIN CARD --- */}
               <div className="relative bg-[#0a0a0a] rounded-2xl p-8 h-full overflow-hidden">
                 
-                {/* 1. SCAN LINE EFFECT (Tere purane code wala) */}
+              
                 <div className="absolute inset-0 w-full h-[2px] bg-white/10 scan-animation pointer-events-none" />
 
                 {/* 2. CORNER ELEMENTS */}
@@ -87,7 +87,7 @@ const Technology = () => {
                     <div className="p-3 bg-white/5 rounded-lg border border-white/10 shadow-[0_0_15px_rgba(255,255,255,0.05)]">
                       {item.icon}
                     </div>
-                    <h3 className="text-2xl font-bold tracking-widest uppercase">{item.title}</h3>
+                    <h3 className="text-2xl font-bold tracking-widest ">{item.title}</h3>
                   </div>
 
                   <div className="space-y-6">

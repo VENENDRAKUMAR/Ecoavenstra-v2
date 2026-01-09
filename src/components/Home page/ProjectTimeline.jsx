@@ -8,189 +8,184 @@ gsap.registerPlugin(ScrollTrigger);
 const processSteps = [
   {
     number: '01',
-    title: 'Discovery & Strategy Call',
-    subtitle: 'Understanding Goals + Brand Direction',
-    duration: '0d - 3d',
-    description:
-      'We understand your project vision, business goals, target audience, and expected outcomes. This phase helps align the long-term strategy and ensures we build the right product.',
+    title: 'Discovery & Strategy',
+    subtitle: 'Goals + Direction',
+    duration: '0-3 Days',
+    description: 'We align on your project vision, business goals, and target audience to ensure the right product strategy.',
   },
   {
     number: '02',
-    title: 'Research & Market Analysis',
-    subtitle: 'Competitive Analysis + UX Research',
-    duration: '3d - 7d',
-    description:
-      'We study user behavior, competitors, industry standards, and opportunities. This allows us to design a product that stands out and performs better in the market.',
+    title: 'Market Research',
+    subtitle: 'UX Research',
+    duration: '3-7 Days',
+    description: 'Deep dive into user behavior and competitors to design a product that outperforms the market.',
   },
   {
     number: '03',
-    title: 'Wireframes & UX Architecture',
-    subtitle: 'Low/High Fidelity Wireframes',
+    title: 'UX Architecture',
+    subtitle: 'Wireframing',
     highlight: true,
-    duration: '7d - 14d',
-    description:
-      'We craft the product flow, structure, and overall user journey. This stage forms the skeleton of the final design and helps avoid expensive revisions later.',
+    duration: '7-14 Days',
+    description: 'Crafting the user journey and skeleton of the app to avoid expensive design revisions later.',
   },
   {
     number: '04',
     title: 'UI Design System',
-    subtitle: 'Visual Design + Branding Elements',
-    duration: '14d - 20d',
-    description:
-      'We create pixel-perfect UI screens, color system, typography, components, interactions, and prototypes — ready to hand over to development.',
+    subtitle: 'Visual Branding',
+    duration: '14-20 Days',
+    description: 'Creating pixel-perfect screens, typography, and interactive prototypes ready for development.',
   },
   {
     number: '05',
     title: 'Development',
-    subtitle: 'Frontend + Backend Implementation',
-    duration: '20d - 30d',
-    description:
-      'We convert your approved design into a fully functional product with best coding practices, performance optimization, responsiveness, and security.',
+    subtitle: 'Implementation',
+    duration: '20-30 Days',
+    description: 'Converting designs into a functional, high-performance product with secure, clean code.',
   },
   {
     number: '06',
-    title: 'Deployment & Long-term Support',
-    subtitle: 'Hosting + Monitoring + Feature Add-ons',
-    duration: '30d - Ongoing',
-    description:
-      'We deploy your product, set up analytics, fix bugs, optimize performance, and provide long-term support. Additional features can be added anytime.',
+    title: 'Deployment',
+    subtitle: 'Support & Launch',
+    duration: 'Ongoing',
+    description: 'Final launch, performance monitoring, and long-term support for feature additions.',
   },
 ];
 
 const ProjectTimeline = () => {
-  const timelineRef = useRef(null);
-  const CARD_HEIGHT = 'min-h-48';
+  const containerRef = useRef(null);
 
   useLayoutEffect(() => {
-    const ctx = gsap.context(() => {
-      gsap.from('.timeline-step', {
-        opacity: 0,
-        y: 50,
-        stagger: 0.2,
-        duration: 0.8,
-        scrollTrigger: {
-          trigger: timelineRef.current,
-          start: 'top 80%',
-        },
-      });
-
-      gsap.to('.timeline-step.highlight', {
-        scale: 1.02,
+    let ctx = gsap.context(() => {
+      // Pulse animation for the highlighted card
+      gsap.to('.highlight-pulse', {
+        boxShadow: '0 0 20px rgba(34, 197, 94, 0.4)',
+        borderColor: 'rgba(34, 197, 94, 0.8)',
         duration: 2,
-        ease: 'power1.inOut',
         repeat: -1,
         yoyo: true,
-        boxShadow: '0 0 25px rgba(52, 211, 153, 0.6)',
-        scrollTrigger: {
-          trigger: timelineRef.current,
-          start: 'top 80%',
-        },
+        ease: 'sine.inOut'
       });
-    }, timelineRef);
+    }, containerRef);
 
     return () => ctx.revert();
   }, []);
 
   return (
     <section
-      ref={timelineRef}
-      className="w-full bg-[#050505] text-white pt-20 pb-16 overflow-hidden min-h-screen"
+      ref={containerRef}
+      className="w-full bg-[#080808] text-white py-20 px-4 overflow-hidden"
     >
- <h2 className="text-4xl md:text-5xl font-extrabold mb-6 text-center px-4 leading-tight">
-  The <span className="text-green-500"> Process</span> Behind Every Successful Project
-  <span className="block text-white/60 font-light text-xl md:text-2xl mt-2">
-    Transparent. Predictable. Designed to deliver high-quality results every time.
-  </span>
-</h2>
+      {/* Header Section */}
+      <div className="max-w-7xl mx-auto text-center mb-16">
+        <motion.h2 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="text-4xl md:text-6xl font-bold mb-6 tracking-tight"
+        >
+          The <span className="text-white">Process</span> That Delivers
+        </motion.h2>
+        <motion.p 
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ delay: 0.3 }}
+          className="text-gray-400 text-lg md:text-xl max-w-2xl mx-auto font-light"
+        >
+          A transparent and predictable workflow designed for high-quality results.
+        </motion.p>
+      </div>
 
-
-
-      <div className="max-w-7xl mx-auto px-6">
-        {/* 📌 Responsive Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6">
+      <div className="max-w-7xl mx-auto">
+        {/* Grid of Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {processSteps.map((step, index) => (
             <motion.div
               key={step.number}
-              // drag
-              dragConstraints={{ top: 0, bottom: 0, left: 0, right: 0 }}
-              whileHover={{ scale: 1.03 }}
-              whileTap={{ scale: 0.98 }}
-              initial={{ opacity: 0, y: 40 }}
+              initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.15 }}
-              className={`timeline-step w-full ${CARD_HEIGHT} flex flex-col justify-between p-6 rounded-xl transition-all duration-500 cursor-pointer 
-                ${
-                  step.highlight
-                    ? 'highlight bg-green-500 text-black shadow-2xl mb-4'
-                    : 'bg-white text-black border border-white/10 hover:bg-gray-100'
-                }
-              `}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              whileHover={{ y: -5 }}
+              className={`relative p-8 rounded-2xl border transition-all duration-300 group
+                ${step.highlight 
+                  ? 'bg-green-500/5 border-green-500/50 highlight-pulse' 
+                  : 'bg-[#111111] border-white/5 hover:border-white/20'
+                }`}
             >
-              <div>
-                <p className="text-3xl font-serif mb-2">{step.number}</p>
-                <h3 className="text-xl  font-mono">{step.title}</h3>
-                <p className="text-sm text-gray-600 mt-1">{step.subtitle}</p>
-
-                {/* Description */}
-                <p className="text-sm mt-3 leading-relaxed text-gray-700">
-                  {step.description}
-                </p>
+              {/* Step Number */}
+              <div className={`text-4xl font-black mb-4 ${step.highlight ? 'text-green-500' : 'text-white/10 group-hover:text-white/20'}`}>
+                {step.number}
               </div>
+              
+              <h3 className="text-xl font-bold mb-1">{step.title}</h3>
+              <p className="text-green-500 text-xs font-mono mb-4 uppercase tracking-widest">{step.subtitle}</p>
+              
+              <p className="text-gray-400 text-sm leading-relaxed mb-6">
+                {step.description}
+              </p>
 
-              {/* Duration */}
-              <div className="mt-4 text-xs font-semibold text-right text-gray-800">
-                ⏳ {step.duration}
+              <div className="flex items-center justify-between mt-auto pt-4 border-t border-white/5">
+                <span className="text-[10px] uppercase tracking-tighter text-gray-500 font-bold">Timeline</span>
+                <span className="text-xs font-semibold text-gray-300 bg-white/5 px-2 py-1 rounded">
+                  {step.duration}
+                </span>
               </div>
             </motion.div>
           ))}
         </div>
 
-        {/* ----- TIMELINE CHART (SAME AS YOURS) ----- */}
-        <div className="mt-20 text-xs relative">
-          <div className="flex justify-between text-gray-400 mb-2 border-b border-white/10 pb-1">
-            <span>0d</span>
-            <span>5d</span>
-            <span>10d</span>
-            <span>15d</span>
-            <span>20d</span>
-            <span>25d</span>
-            <span>30d</span>
+        {/* --- Visual Timeline Chart --- */}
+        <div className="mt-24 p-8 bg-[#111111] rounded-3xl border border-white/5 hidden md:block">
+          <div className="flex justify-between text-[10px] text-gray-500 uppercase tracking-[0.2em] mb-8 border-b border-white/5 pb-4">
+            <span>Start</span>
+            <span>Week 1</span>
+            <span>Week 2</span>
+            <span>Week 3</span>
+            <span>Launch (Day 30)</span>
           </div>
 
-          <div className="space-y-4 pt-4">
-            <motion.div
-              initial={{ width: 0 }}
-              whileInView={{ width: '40%' }}
-              transition={{ duration: 1.5 }}
-              className="bg-green-700/60 h-6 flex items-center justify-end px-3 rounded-md ml-[10%]"
-            >
-              <span>Wireframes (Prototype)</span>
-            </motion.div>
+          <div className="space-y-6">
+            {/* Bar 1 */}
+            <div className="relative h-8 w-full bg-white/5 rounded-full overflow-hidden">
+              <motion.div 
+                initial={{ width: 0 }}
+                whileInView={{ width: '40%' }}
+                transition={{ duration: 1.5, ease: "circOut" }}
+                className="absolute h-full bg-green-900/40 border-r-2 border-green-500 flex items-center px-4"
+              >
+                <span className="text-[10px] font-bold whitespace-nowrap">STRATEGY & UX</span>
+              </motion.div>
+            </div>
 
-            <motion.div
-              initial={{ width: 0 }}
-              whileInView={{ width: '55%' }}
-              transition={{ duration: 1.6 }}
-              className="bg-green-500 h-6 flex items-center justify-end px-3 rounded-md ml-[30%]"
-            >
-              <span className="text-black font-medium">Design & High-Fidelity</span>
-            </motion.div>
+            {/* Bar 2 */}
+            <div className="relative h-8 w-full bg-white/5 rounded-full overflow-hidden">
+              <motion.div 
+                initial={{ width: 0 }}
+                whileInView={{ width: '50%' }}
+                transition={{ duration: 1.5, delay: 0.5, ease: "circOut" }}
+                className="absolute left-[30%] h-full bg-green-500 border-r-2 border-white flex items-center px-4"
+              >
+                <span className="text-[10px] font-bold text-black whitespace-nowrap">UI DESIGN & PROTOTYPING</span>
+              </motion.div>
+            </div>
 
-            <motion.div
-              initial={{ width: 0 }}
-              whileInView={{ width: '30%' }}
-              transition={{ duration: 1.7 }}
-              className="bg-green-700/60 h-6 flex items-center justify-start px-3 rounded-md ml-[70%]"
-            >
-              <span>Development</span>
-            </motion.div>
+            {/* Bar 3 */}
+            <div className="relative h-8 w-full bg-white/5 rounded-full overflow-hidden">
+              <motion.div 
+                initial={{ width: 0 }}
+                whileInView={{ width: '35%' }}
+                transition={{ duration: 1.5, delay: 1, ease: "circOut" }}
+                className="absolute left-[65%] h-full bg-white border-r-2 border-green-500 flex items-center px-4"
+              >
+                <span className="text-[10px] font-bold text-black whitespace-nowrap">DEVELOPMENT & QA</span>
+              </motion.div>
+            </div>
           </div>
+          
+          <p className="text-center mt-8 text-gray-500 text-xs tracking-widest uppercase">
+            Typical 30-Day MVP Workflow
+          </p>
         </div>
-      </div>
-
-      <div className="text-center mt-12 text-gray-400">
-        This represents our typical{' '}
-        <span className="text-green-400 font-semibold">30-day MVP delivery cycle</span>.
       </div>
     </section>
   );

@@ -50,8 +50,8 @@ const BlogSection = () => {
             <span className="flex items-center gap-2 text-cyan-500 font-mono text-xs uppercase tracking-[0.5em] mb-4">
               <Sparkles size={14} /> Insights & Updates
             </span>
-            <h2 className="text-5xl md:text-7xl font-black uppercase tracking-tighter leading-none">
-              FROM THE <br /> <span className="text-white/20 italic">JOURNAL.</span>
+            <h2 className="text-4xl md:text-3xl tracking-tighter leading-none">
+              From the <br /> <span className="text-white/20 italic">Journal.</span>
             </h2>
           </motion.div>
           

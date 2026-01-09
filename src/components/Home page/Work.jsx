@@ -94,7 +94,7 @@ const Work = () => {
           >
             // Portfolio
           </motion.span>
-          <h2 className="text-5xl md:text-8xl font-black uppercase tracking-tighter italic">
+          <h2 className="text-3xl md:text-8xl  tracking-tighter ">
             Featured <span className="text-white/20">Works</span>
           </h2>
         </div>

@@ -30,7 +30,7 @@ const EnquiryForm = () => {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center bg-[#050505] text-white p-4 md:p-10 overflow-hidden">
+    <section className="relative min-h-screen flex items-center justify-center bg-[#000000] text-white p-4 md:p-10 overflow-hidden">
       
       {/* --- DYNAMIC AMBIENT BACKGROUND --- */}
       <div className="absolute inset-0 z-0">
@@ -41,7 +41,7 @@ const EnquiryForm = () => {
             y: [0, 30, 0] 
           }}
           transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
-          className="absolute top-[-10%] left-[-10%] w-[500px] h-[500px] bg-purple-600/10 blur-[120px] rounded-full" 
+          className="absolute top-[-10%] left-[-10%] w-[500px] h-[500px] bg-blue-200/10 blur-[120px] rounded-full" 
         />
         <motion.div 
           animate={{ 
@@ -50,7 +50,7 @@ const EnquiryForm = () => {
             y: [0, -30, 0] 
           }}
           transition={{ duration: 12, repeat: Infinity, ease: "linear" }}
-          className="absolute bottom-[-10%] right-[-10%] w-[600px] h-[600px] bg-green-500/10 blur-[150px] rounded-full" 
+          className="absolute bottom-[-10%] right-[-10%] w-[600px] h-[600px] bg-lime-300/10 blur-[150px] rounded-full" 
         />
       </div>
 
@@ -68,10 +68,10 @@ const EnquiryForm = () => {
               animate={{ x: 0 }}
               className="flex items-center gap-3 text-green-400 font-mono text-xs tracking-[0.4em] uppercase mb-8"
             >
-              <Sparkles className="w-4 h-4" /> Ecoavenstra Digital
+              <Sparkles className="w-4 h-4" /> Ecoavenstra 
             </motion.div>
             <h1 className="text-5xl md:text-7xl font-black tracking-tighter leading-[0.9] mb-6">
-              LET'S <br /> <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-green-400">BUILD</span> <br /> IT.
+              LET'S <br /> <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-slate-100 to-green-400">BUILD</span> <br /> IT.
             </h1>
             <p className="text-gray-400 text-lg font-light leading-relaxed max-w-sm">
               Stop waiting for the "right time". Your digital transformation starts with a single message.
@@ -80,7 +80,7 @@ const EnquiryForm = () => {
 
           <div className="mt-12 space-y-6">
             <div className="flex items-center gap-4 group cursor-pointer">
-              <div className="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center group-hover:bg-purple-500 transition-colors">
+              <div className="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center group-hover:bg-blue-500 transition-colors">
                 <Phone className="w-5 h-5" />
               </div>
               <span className="text-sm font-medium text-gray-300">Talk to an expert</span>
@@ -120,7 +120,7 @@ const EnquiryForm = () => {
                   <Mail className="absolute left-0 top-1/2 -translate-y-1/2 text-gray-500 group-focus-within:text-purple-400 transition-colors w-4 h-4" />
                   <input 
                     type="email" name="email" placeholder="EMAIL"
-                    className="w-full bg-transparent border-b border-white/10 py-4 pl-8 outline-none focus:border-purple-500 transition-all font-mono text-xs uppercase tracking-widest"
+                    className="w-full bg-transparent border-b border-white/10 py-4 pl-8 outline-none focus:border-blue-500 transition-all font-mono text-xs uppercase tracking-widest"
                     onChange={handleChange} required
                   />
                 </div>

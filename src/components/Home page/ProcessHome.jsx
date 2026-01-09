@@ -24,11 +24,11 @@ const ProcessHome = () => {
   }, []);
 
   return (
-    <section className="bg-[#030303] text-white py-32 px-4 md:px-10 overflow-hidden relative">
+    <section className="bg-[#000000] text-white py-32 px-4 md:px-10 overflow-hidden relative">
       
       {/* --- PRO BACKGROUND AMBIENCE --- */}
-      <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-blue-600/5 blur-[120px] rounded-full pointer-events-none" />
-      <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-green-500/5 blur-[120px] rounded-full pointer-events-none" />
+      <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-black blur-[120px] rounded-full pointer-events-none" />
+      <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-black blur-[120px] rounded-full pointer-events-none" />
 
       <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-20 items-center relative z-10">
         
@@ -39,10 +39,10 @@ const ProcessHome = () => {
             whileInView={{ opacity: 1, y: 0 }}
             className="mb-10 text-center lg:text-left"
           >
-            <h2 className="text-5xl md:text-7xl font-black uppercase tracking-tighter leading-none mb-4">
+            <h2 className="text-6xl md:text-4xl  font-medium tracking-tighter leading-none mb-4">
               Our <br /> <span className="text-blue-500">Method</span>
             </h2>
-            <p className="text-white/40 font-mono text-xs uppercase tracking-[0.4em]">Drag the cards to explore</p>
+            <p className="text-white/40 font-mono text-xs tracking-[0.4em]">Drag the cards to explore</p>
           </motion.div>
 
           <div className="relative h-[400px] w-full max-w-[320px] md:max-w-[400px]">

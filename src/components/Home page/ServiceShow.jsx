@@ -78,22 +78,22 @@ const ServicesShowcase = () => {
   const displayServices = useMemo(() => [...services, ...services, ...services], []);
 
   return (
-    <section ref={containerRef} className="min-h-screen w-full bg-[#030303] text-white py-24 overflow-hidden selection:bg-purple-500">
+    <section ref={containerRef} className="min-h-screen w-full bg-[#030303] text-white py-24 overflow-hidden selection:bg-blue-500">
       
       {/* --- BACKGROUND DECOR --- */}
       <div className="absolute top-0 left-0 w-full h-full pointer-events-none">
-        <div className="absolute top-[20%] left-[-10%] w-[500px] h-[500px] bg-purple-600/10 blur-[150px] rounded-full" />
+        <div className="absolute top-[20%] left-[-10%] w-[500px] h-[500px] bg-blue-600/10 blur-[150px] rounded-full" />
         <div className="absolute bottom-[20%] right-[-10%] w-[500px] h-[500px] bg-blue-600/10 blur-[150px] rounded-full" />
       </div>
 
       <div className="relative z-10">
         {/* Header */}
         <div className="px-6 md:px-20 mb-20">
-          <motion.span className="text-purple-500 font-mono text-xs tracking-[0.5em] uppercase mb-4 block reveal-text">
+          <motion.span className="text-blue-500 font-mono text-xs tracking-[0.5em] capatalize mb-4 block reveal-text">
             // Core Capabilities
           </motion.span>
-          <h2 className="text-6xl md:text-[9vw] font-black uppercase tracking-tighter leading-[0.8] reveal-text">
-            SOLUTIONS <br /> <span className="text-transparent bg-clip-text bg-gradient-to-r from-white/40 via-white to-white/40">ENGINEERED.</span>
+          <h2 className="text-5xl md:text-[5vw] font-lite capatalize tracking-tighter leading-[0.8] reveal-text">
+            Solutions <br /> <span className="text-transparent bg-clip-text bg-gradient-to-r from-white/40 via-white capitalize to-white/40">Engineered .</span>
           </h2>
         </div>
 
@@ -116,19 +116,19 @@ const ServicesShowcase = () => {
                   className={`relative group cursor-pointer p-10 rounded-[3rem] border transition-all duration-700 h-64 flex flex-col justify-between overflow-hidden ${
                     active.id === svc.id 
                     ? 'bg-white border-white' 
-                    : 'bg-zinc-900/40 border-white/10 hover:border-purple-500/50'
+                    : 'bg-zinc-900/40 border-white/10 hover:border-blue-500/50'
                   }`}
                 >
                   <div className="flex justify-between items-start">
-                    <div className={`${active.id === svc.id ? 'text-black' : 'text-purple-500'} group-hover:scale-110 transition-transform duration-500`}>
+                    <div className={`${active.id === svc.id ? 'text-black' : 'text-blue-500'} group-hover:scale-110 transition-transform duration-500`}>
                       {svc.icon}
                     </div>
-                    <span className={`text-[10px] font-black tracking-widest uppercase ${active.id === svc.id ? 'text-black/40' : 'text-white/20'}`}>
+                    <span className={`text-[10px] font-lite tracking-widest capatalize ${active.id === svc.id ? 'text-black/40' : 'text-white/20'}`}>
                       0{svc.id}
                     </span>
                   </div>
                   
-                  <h3 className={`text-3xl font-bold uppercase tracking-tighter leading-none ${active.id === svc.id ? 'text-black' : 'text-white'}`}>
+                  <h3 className={`text-3xl font-lite capatalize tracking-tighter leading-none ${active.id === svc.id ? 'text-black' : 'text-white'}`}>
                     {svc.title}
                   </h3>
 
@@ -155,22 +155,22 @@ const ServicesShowcase = () => {
               {/* Left Column: Vision */}
               <div className="lg:col-span-5 space-y-10">
                 <div>
-                  <div className="flex items-center gap-3 text-purple-500 font-mono text-[10px] tracking-[0.3em] uppercase mb-6">
+                  <div className="flex items-center gap-3 text-blue-500 font-mono text-[10px] tracking-[0.3em] capatalize mb-6">
                     <Zap size={14} /> Mission Protocol
                   </div>
-                  <h2 className="text-5xl md:text-7xl font-bold uppercase tracking-tighter leading-none mb-8">
+                  <h2 className="text-5xl md:text-7xl font-lite capatalize tracking-tighter leading-none mb-8">
                     {active.title.split(' ')[0]} <br /> 
                     <span className="text-white/30 italic">{active.title.split(' ')[1] || "Solution"}</span>
                   </h2>
-                  <p className="text-xl text-gray-400 leading-relaxed font-light italic border-l border-purple-500/50 pl-8">
+                  <p className="text-xl text-gray-400 leading-relaxed font-light italic border-l border-blue-500/50 pl-8">
                     {active.shortDescription}
                   </p>
                 </div>
 
-                <div className="p-8 rounded-[2.5rem] bg-gradient-to-br from-purple-500 to-indigo-700 text-white shadow-2xl shadow-purple-500/20">
-                   <div className="text-[10px] font-black uppercase tracking-[0.2em] mb-2 opacity-70">Investment Range</div>
-                   <div className="text-4xl font-black tracking-tighter mb-4">{active.pricing}</div>
-                   <button className="w-full py-4 bg-white text-black rounded-2xl text-[10px] font-black uppercase tracking-widest flex items-center justify-center gap-2 hover:bg-black hover:text-white transition-all">
+                <div className="p-8 rounded-[2.5rem] bg-gradient-to-br from-blue-500 to-indigo-700 text-white shadow-2xl shadow-blue-500/20">
+                   <div className="text-[10px] font-lite capatalize tracking-[0.2em] mb-2 opacity-70">Investment Range</div>
+                   <div className="text-4xl font-lite tracking-tighter mb-4">{active.pricing}</div>
+                   <button className="w-full py-4 bg-white text-black rounded-2xl text-[10px] font-lite capatalize tracking-widest flex items-center justify-center gap-2 hover:bg-black hover:text-white transition-all">
                      Initialize Project <ArrowRight size={14} />
                    </button>
                 </div>
@@ -182,10 +182,10 @@ const ServicesShowcase = () => {
                 <SpecCard title="Technical Scope" items={active.whatIncluded} icon={<Cpu size={14}/>} />
                 
                 <div className="md:col-span-2 p-10 rounded-[3rem] bg-white/[0.02] border border-white/10 backdrop-blur-md">
-                   <h4 className="text-[10px] font-bold tracking-[0.4em] text-purple-500 uppercase mb-8">// Tech Ecosystem</h4>
+                   <h4 className="text-[10px] font-lite tracking-[0.4em] text-blue-500 capatalize mb-8">// Tech Ecosystem</h4>
                    <div className="flex flex-wrap gap-3">
                      {active.techStack.map((tech, i) => (
-                       <span key={i} className="px-6 py-3 bg-white/5 border border-white/10 rounded-2xl text-xs font-bold hover:bg-purple-500 hover:text-white transition-all cursor-default">
+                       <span key={i} className="px-6 py-3 bg-white/5 border border-white/10 rounded-2xl text-xs font-lite hover:bg-blue-500 hover:text-white transition-all cursor-default">
                          {tech}
                        </span>
                      ))}
@@ -207,17 +207,17 @@ const ServicesShowcase = () => {
 };
 
 const SpecCard = ({ title, items, icon }) => (
-  <div className="p-10 rounded-[3rem] bg-[#0a0a0a] border border-white/5 hover:border-purple-500/30 transition-all group relative overflow-hidden">
-    <div className="absolute top-0 right-0 p-6 text-white/5 group-hover:text-purple-500/10 transition-colors">
+  <div className="p-10 rounded-[3rem] bg-[#0a0a0a] border border-white/5 hover:border-blue-500/30 transition-all group relative overflow-hidden">
+    <div className="absolute top-0 right-0 p-6 text-white/5 group-hover:text-blue-500/10 transition-colors">
         {icon}
     </div>
-    <h4 className="text-[10px] font-bold tracking-[0.4em] text-gray-500 uppercase mb-8 group-hover:text-purple-400">
+    <h4 className="text-[10px] font-lite tracking-[0.4em] text-gray-500 capatalize mb-8 group-hover:text-blue-400">
       // {title}
     </h4>
     <ul className="space-y-4">
       {items.map((item, i) => (
         <li key={i} className="text-sm text-gray-400 font-medium leading-tight flex items-start gap-3">
-          <div className="w-1 h-1 bg-purple-500 rounded-full mt-1.5" />
+          <div className="w-1 h-1 bg-blue-500 rounded-full mt-1.5" />
           {item}
         </li>
       ))}

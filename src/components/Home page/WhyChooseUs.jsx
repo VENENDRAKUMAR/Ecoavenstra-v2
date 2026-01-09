@@ -29,11 +29,11 @@ export default function WhyChooseUs() {
               initial={{ opacity: 0 }} whileInView={{ opacity: 1 }}
               className="text-green-400 font-mono text-xs uppercase tracking-[0.5em] mb-4 block"
             >
-              // Why Ecoavenstra
+              Why Ecoavenstra
             </motion.span>
-            <h2 className="text-5xl md:text-7xl font-bold tracking-tighter leading-none">
-              WE ARCHITECT <br /> 
-              <span className="text-white/20">THE FUTURE.</span>
+            <h2 className="text-5xl md:text-3xl md:p-4  pr-8 text-center capitalize tracking-tighter leading-none">
+              We Architect <br /> 
+              <span className="text-white/20">The future.</span>
             </h2>
           </div>
           <p className="text-gray-500 max-w-sm text-sm md:text-base leading-relaxed">
@@ -48,21 +48,21 @@ export default function WhyChooseUs() {
           <motion.div 
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
-            className="lg:col-span-7 relative group rounded-[3rem] overflow-hidden border border-white/10 h-[500px]"
+            className="lg:col-span-7 relative group rounded-[3rem]  overflow-hidden border  border-white/10 h-[400px]"
           >
             <img 
               src={WhyChoose} 
               alt="Office" 
-              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-60"
+              className="w-full h-full object-cover  transition-transform duration-700  group-hover:scale-110 opacity-60"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent" />
             
             <div className="absolute bottom-10 left-10 right-10">
               <div className="flex items-center gap-4 mb-4">
                 <span className="h-[1px] w-12 bg-green-500" />
-                <span className="text-xs font-bold tracking-widest uppercase text-green-400">Our Essence</span>
+                <span className="text-xs tracking-widest  text-green-400">Our Essence</span>
               </div>
-              <h3 className="text-3xl font-bold max-w-md italic">"Innovation is not just what we do, it's how we think."</h3>
+              <h3 className="text-2xl  max-w-md italic">"Innovation is not just what we do, it's how we think."</h3>
             </div>
           </motion.div>
 

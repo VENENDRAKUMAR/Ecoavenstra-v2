@@ -179,7 +179,7 @@ const PremiumLanding = () => {
             <div className="absolute inset-0 bg-gradient-to-br from-blue-600/10 via-transparent to-emerald-500/10 opacity-50" />
             
             <div className="relative z-10 text-center md:text-left">
-              <span className="text-[10px] font-bold tracking-[0.5em] text-emerald-400 uppercase flex items-center gap-2 justify-center md:justify-start">
+              <span className="text-[10px] font-bold tracking-[0.5em]  uppercase flex items-center gap-2 justify-center md:justify-start">
                 <Shield size={14} /> 03 / Efficiency
               </span>
               <h3 className="text-5xl md:text-5xl  tracking-tighter mt-4 leading-none">
@@ -191,7 +191,7 @@ const PremiumLanding = () => {
               whileHover={{ rotate: 5, scale: 1.05 }}
               className="mt-12 md:mt-0 relative z-10 p-1 bg-white/5 rounded-[2.5rem] border border-white/10"
             >
-              <button className="px-12 py-8 bg-white text-black rounded-[2rem] font-black text-xs uppercase tracking-[0.4em] shadow-2xl hover:bg-emerald-500 transition-all active:scale-95">
+              <button className="px-12 py-8 bg-white text-black rounded-[2rem] font-black text-xs uppercase tracking-[0.4em] shadow-2xl hover:bg-lime-100 transition-all active:scale-95">
                 Build Yours
               </button>
             </motion.div>

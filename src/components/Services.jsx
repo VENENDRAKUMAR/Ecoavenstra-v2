@@ -11,7 +11,7 @@ const fullServices = [
   {
     id: "01",
     title: "UX/UI Design",
-    icon: <Layout className="text-purple-500" size={32} />,
+    icon: <Layout className="text-blue-500" size={32} />,
     subtitle: "We create intuitive, engaging, and aesthetically pleasing user interfaces that provide a seamless user experience. Our design process is user-centric, ensuring that every element serves a purpose and enhances usability.",
     bullets: [
       "User Research & Analysis",
@@ -39,7 +39,7 @@ const fullServices = [
   {
     id: "03",
     title: "SaaS Platforms",
-    icon: <ShieldCheck className="text-purple-400" size={32} />,
+    icon: <ShieldCheck className="text-blue-400" size={32} />,
     subtitle: "We specialize in building multi-tenant, subscription-ready SaaS applications. Our architecture is designed for scalability, security, and easy management, complete with billing, roles, and analytics.",
     bullets: [
       "Multi-Tenant Architecture",
@@ -53,7 +53,7 @@ const fullServices = [
   {
     id: "04",
     title: "Branding & Identity",
-    icon: <Sparkles className="text-pink-500" size={32} />,
+    icon: <Sparkles className="text-green-500" size={32} />,
     subtitle: "A strong brand is more than just a logo. We help you craft a complete brand identity, from strategy and messaging to visual design, that resonates with your target audience and sets you apart from the competition.",
     bullets: [
       "Brand Strategy",
@@ -76,15 +76,15 @@ const ServicesHero = () => {
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-purple-500/30 bg-purple-500/10 text-[10px] font-bold tracking-[0.3em] uppercase text-purple-400 mb-8"
+          className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-blue-500/30 bg-blue-400/10 text-[10px] font-lite tracking-[0.3em] capatalize text-blue-400 mb-8"
         >
           <Zap size={14} fill="currentColor" /> Premium Engineering Studio
         </motion.div>
 
-        <h1 className="text-7xl md:text-[9vw] font-black uppercase tracking-tighter leading-[0.8] mb-12">
-          WE BUILD <br /> 
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-white to-indigo-400">
-            STRONG PRODUCTS.
+        <h1 className="text-7xl md:text-[9vw] text-white tracking-tighter leading-[0.8] mb-12">
+          We Build <br /> 
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-lime-400 via-white to-blue-400">
+            Strong Products.
           </span>
         </h1>
 
@@ -92,7 +92,7 @@ const ServicesHero = () => {
           <div className="text-5xl font-light text-white/20 italic tracking-tighter">WHAT WE DO</div>
           <div className="md:col-span-2">
             <p className="text-xl md:text-2xl text-gray-400 leading-relaxed font-light">
-              Grow your brand with high-impact design, social media strategy, and digital marketing. At <span className="text-white font-bold border-b border-purple-500">Ecoavenstra</span>, we create visuals, websites, and campaigns that build trust and drive real business growth.
+              Grow your brand with high-impact design, social media strategy, and digital marketing. At <span className="text-white font-lite border-b border-blue-500">Ecoavenstra</span>, we create visuals, websites, and campaigns that build trust and drive real business growth.
             </p>
           </div>
         </div>
@@ -112,10 +112,10 @@ const ServiceSection = ({ service }) => {
         <div className="lg:col-span-6 space-y-12">
           <div className="space-y-6">
             <div className="flex items-center gap-4">
-              <span className="text-purple-500 font-mono text-xl font-bold tracking-tighter">{service.id}/</span>
-              <div className="h-[1px] w-12 bg-purple-500/50" />
+              <span className="text-blue-500 font-mono text-xl font-lite tracking-tighter">{service.id}/</span>
+              <div className="h-[1px] w-12 bg-blue-500/50" />
             </div>
-            <h2 className="text-6xl md:text-8xl font-bold text-white uppercase tracking-tighter leading-none">
+            <h2 className="text-6xl md:text-8xl font-lite text-white capatalize tracking-tighter leading-none">
               {service.title}
             </h2>
             <p className="text-lg text-gray-400 leading-relaxed font-light">
@@ -125,19 +125,19 @@ const ServiceSection = ({ service }) => {
 
           {/* Detailed Bullets with Glass Effect */}
           <div className="bg-white/[0.02] border border-white/10 rounded-[2.5rem] p-10 backdrop-blur-3xl">
-            <h4 className="text-[10px] font-black uppercase tracking-[0.4em] text-purple-500 mb-8">// Core Expertise</h4>
+            <h4 className="text-[10px] font-black capatalize tracking-[0.4em] text-blue-500 mb-8">// Core Expertise</h4>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {service.bullets.map((bullet, i) => (
                 <div key={i} className="flex items-center gap-3 text-white/80 group">
-                  <CheckCircle2 size={16} className="text-purple-500 opacity-50 group-hover:opacity-100 transition-opacity" />
+                  <CheckCircle2 size={16} className="text-blue-500 opacity-50 group-hover:opacity-100 transition-opacity" />
                   <span className="text-sm font-medium tracking-wide">{bullet}</span>
                 </div>
               ))}
             </div>
           </div>
 
-          <button className="group flex items-center gap-4 text-white font-bold uppercase tracking-widest text-xs">
-            <div className="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center group-hover:bg-purple-600 group-hover:border-purple-600 transition-all">
+          <button className="group flex items-center gap-4 text-white font-lite capatalize tracking-widest text-xs">
+            <div className="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center group-hover:bg-blue-600 group-hover:border-blue-600 transition-all">
               <ArrowUpRight size={20} />
             </div>
             Start {service.title} Project
@@ -146,7 +146,7 @@ const ServiceSection = ({ service }) => {
 
         {/* RIGHT SIDE: Interactive Image */}
         <div className="lg:col-span-6 relative group">
-          <div className="absolute -inset-4 bg-gradient-to-br from-purple-600/20 to-indigo-600/20 rounded-[3rem] blur-3xl opacity-0 group-hover:opacity-100 transition-duration-1000" />
+          <div className="absolute -inset-4 bg-gradient-to-br from-blue-600/20 to-indigo-600/20 rounded-[3rem] blur-3xl opacity-0 group-hover:opacity-100 transition-duration-1000" />
           <div className="relative h-[500px] md:h-[700px] rounded-[3rem] overflow-hidden border border-white/10">
             <img 
               src={service.image} 
@@ -157,8 +157,8 @@ const ServiceSection = ({ service }) => {
             <div className="absolute bottom-8 left-8 right-8 p-8 bg-black/40 backdrop-blur-xl border border-white/10 rounded-[2rem]">
                <div className="flex items-center justify-between">
                   <div>
-                    <p className="text-[10px] font-bold text-purple-400 uppercase tracking-widest mb-1">Status</p>
-                    <p className="text-sm text-white font-bold">READY TO INITIALIZE</p>
+                    <p className="text-[10px] font-lite text-blue-400 capatalize tracking-widest mb-1">Status</p>
+                    <p className="text-sm text-white font-lite">READY TO INITIALIZE</p>
                   </div>
                   {service.icon}
                </div>
@@ -172,7 +172,7 @@ const ServiceSection = ({ service }) => {
 
 const ServicesPage = () => {
   return (
-    <main className="bg-[#030014] selection:bg-purple-500">
+    <main className="bg-[#030014] selection:bg-blue-500">
       <ServicesHero />
       {fullServices.map((svc) => (
         <ServiceSection key={svc.id} service={svc} />

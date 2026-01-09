@@ -66,10 +66,10 @@ const JobDescription = () => {
 
           <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-6">
             <div>
-              <span className="bg-blue-600/20 text-blue-400 px-4 py-1 rounded-full text-xs font-bold uppercase tracking-widest mb-4 inline-block">
+              <span className="bg-blue-600/20 text-blue-400 px-4 py-1 rounded-full text-xs   font-lite capatlize tracking-widest mb-4 inline-block">
                 {job.jobType}
               </span>
-              <h1 className="text-4xl md:text-6xl font-black italic uppercase tracking-tighter leading-none mb-4">
+              <h1 className="text-4xl md:text-6xl   font-lite    capatlize tracking-tighter leading-none mb-4">
                 {job.jobTitle}
               </h1>
               <p className="text-xl text-white/60 font-medium flex items-center gap-2">
@@ -80,7 +80,7 @@ const JobDescription = () => {
             <motion.button 
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="bg-white text-black px-10 py-4 rounded-2xl font-black uppercase italic tracking-tight hover:bg-blue-600 hover:text-white transition-all shadow-xl shadow-blue-600/10"
+              className="bg-white text-black px-10 py-4 rounded-2xl   font-lite capatlize    tracking-tight hover:bg-blue-600 hover:text-white transition-all shadow-xl shadow-blue-600/10"
               onClick={() => setIsModalOpen(true)}
             >
               Apply for this role
@@ -95,14 +95,14 @@ const JobDescription = () => {
         {/* Left Side: Description */}
         <div className="lg:col-span-2 space-y-12">
           <section>
-            <h2 className="text-sm font-bold text-blue-500 uppercase tracking-[0.3em] mb-6">// Job Overview</h2>
+            <h2 className="text-sm   font-lite text-blue-500 capatlize tracking-[0.3em] mb-6">// Job Overview</h2>
             <div className="prose prose-invert max-w-none text-white/70 leading-relaxed text-lg whitespace-pre-wrap">
               {job.jobDescription}
             </div>
           </section>
 
           <section className="p-8 rounded-[2rem] bg-white/5 border border-white/10">
-            <h3 className="text-xl font-bold italic mb-4">What You Will Do</h3>
+            <h3 className="text-xl   font-lite    mb-4">What You Will Do</h3>
             <p className="text-white/60 leading-relaxed">
               As a {job.jobTitle} at {job.companyName}, you will be responsible for driving innovation and maintaining high standards in {job.jobLocation}. 
               We are looking for someone who is passionate, disciplined, and ready to grow.
@@ -113,7 +113,7 @@ const JobDescription = () => {
         {/* Right Side: Quick Info Sidebar */}
         <div className="space-y-6">
           <div className="p-8 rounded-[2.5rem] bg-[#0e0e0e] border border-white/5 sticky top-10">
-            <h3 className="text-xs font-bold text-white/30 uppercase tracking-[0.2em] mb-8">Role Details</h3>
+            <h3 className="text-xs   font-lite text-white/30 / tracking-[0.2em] mb-8">Role Details</h3>
             
             <div className="space-y-6">
               <InfoItem icon={<BsCashStack />} label="Salary Range" value={job.salaryRange || "Competitive"} />
@@ -125,7 +125,7 @@ const JobDescription = () => {
             <hr className="my-8 border-white/5" />
 
             <div className="bg-blue-600/5 p-4 rounded-2xl border border-blue-500/20">
-              <p className="text-[10px] text-blue-400 font-bold uppercase mb-2">Hiring Status</p>
+              <p className="text-[10px] text-blue-400   font-lite capatlize mb-2">Hiring Status</p>
               <p className="text-sm text-white/80">Actively reviewing applications for this position.</p>
             </div>
           </div>
@@ -148,7 +148,7 @@ const InfoItem = ({ icon, label, value }) => (
       {icon}
     </div>
     <div>
-      <p className="text-[10px] uppercase font-bold text-white/30 tracking-wider">{label}</p>
+      <p className="text-[10px] capatlize   font-lite text-white/30 tracking-wider">{label}</p>
       <p className="text-white font-medium">{value}</p>
     </div>
   </div>

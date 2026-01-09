@@ -1,62 +1,72 @@
+"use client"
+
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
   Code, Layout, ShoppingCart, Smartphone, Globe, 
-  CheckCircle, XCircle, Zap, TrendingUp, DollarSign,
-  ArrowRight, Sparkles, ShieldCheck, Clock
+  ArrowRight, Sparkles, ShieldCheck, Clock, Zap,  Gift
 } from 'lucide-react';
 
-// --- Configuration Data (Content Same Rakhha Hai) ---
 const features = [
   {
-    name: 'Full-Stack Web Development',
+    name: 'full-stack web development',
     icon: Globe,
-    description: 'We build future-proof, scalable, and fully responsive websites tailored to drive your brand growth.',
+    description: 'we build future-proof, scalable, and fully responsive websites tailored to drive your brand growth with precision engineering.',
     startingPrice: '₹49,999',
-    pricing: { BASIC: '₹49,999', PREMIUM: '₹99,999', CUSTOMIZE: 'Quote Available' },
-    includedInPlans: ['BASIC', 'PREMIUM', 'CUSTOMIZE'],
-    offer: '🚀 Complimentary SEO & Speed Optimization Audit with PREMIUM projects.',
-    days: 'Built Right. Delivered On Time – 6 Month Guarantee.'
+    pricing: { basic: '₹49,999', premium: '₹99,999', customize: 'quote' },
+    includedInPlans: ['basic', 'premium', 'customize'],
+    offer: '🚀 complimentary seo & speed optimization audit with premium projects.',
+    days: 'built right. delivered on time – 6 month guarantee.'
   },
   {
-    name: 'High-Converting Landing Pages',
+    name: 'high-converting landing pages',
     icon: Layout,
-    description: 'Bespoke landing pages, laser-focused on one goal: converting your traffic into leads and sales.',
+    description: 'bespoke landing pages, laser-focused on one goal: converting your traffic into leads and sales with high-impact visuals.',
     startingPrice: '₹24,999',
-    pricing: { BASIC: '₹24,999', PREMIUM: '₹49,999', CUSTOMIZE: 'Quote Available' },
-    includedInPlans: ['BASIC', 'PREMIUM', 'CUSTOMIZE'],
-    offer: '🤝 Startup Support: Get 10% off your first campaign page.',
-    days: 'Built Right. Delivered On Time – 1 Month Guarantee.'
+    pricing: { basic: '₹24,999', premium: '₹49,999', customize: 'quote' },
+    includedInPlans: ['basic', 'premium', 'customize'],
+    offer: '🤝 startup support: get 10% off your first campaign page.',
+    days: 'built right. delivered on time – 1 month guarantee.'
+  },
+    {
+    name: 'Digital Marketing Solutions',
+    icon: Gift,
+    description: 'comprehensive digital marketing strategies, including social media, email campaigns, and paid advertising to boost your online presence.',
+    startingPrice: '₹24,999',
+    pricing: { basic: '₹24,999', premium: '₹49,999', customize: 'quote' },
+    includedInPlans: ['basic', 'premium', 'customize'],
+    offer: '🤝 startup support: get 10% off your first campaign page.',
+    days: 'built right. delivered on time – 1 month guarantee.'
   },
   {
-    name: 'Custom Internal Web Solutions',
+    name: 'custom internal web solutions',
     icon: Code,
-    description: 'Streamline your operations with custom dashboards, client portals, and bespoke system integrations.',
+    description: 'streamline your operations with custom dashboards, client portals, and bespoke system integrations for maximum efficiency.',
     startingPrice: '₹1,19,999',
-    pricing: { PREMIUM: '₹1,19,999', CUSTOMIZE: 'Quote Available' },
-    includedInPlans: ['PREMIUM', 'CUSTOMIZE'],
-    offer: '📞 Free 1-hour strategy consultation to map out your digital requirements.',
-    days: 'Built Right. Delivered On Time – 6-12 Month Guarantee.'
+    pricing: { premium: '₹1,19,999', customize: 'quote' },
+    includedInPlans: ['premium', 'customize'],
+    offer: '📞 free 1-hour strategy consultation to map out requirements.',
+    days: 'built right. delivered on time – 6-12 month guarantee.'
   },
   {
-    name: 'Complex SaaS & Web Applications',
+    name: 'complex saas & web applications',
     icon: Smartphone,
-    description: 'Developing tailored applications for unique workflows, complex logic, and enterprise-level functionality.',
+    description: 'developing tailored applications for unique workflows, complex logic, and enterprise-level functionality from scratch.',
     startingPrice: '₹1,49,999',
-    pricing: { PREMIUM: '₹1,49,999', CUSTOMIZE: 'Quote Available' },
-    includedInPlans: ['PREMIUM', 'CUSTOMIZE'],
-    offer: '✨ Early Adopter Discount: Flat ₹10,000 off on your first major app development contract.',
-    days: 'Built Right. Delivered On Time – 12-18 Month Guarantee.'
+    pricing: { premium: '₹1,49,999', customize: 'quote' },
+    includedInPlans: ['premium', 'customize'],
+    offer: '✨ early adopter discount: flat ₹10,000 off on first major contract.',
+    days: 'built right. delivered on time – 12-18 month guarantee.'
   },
   {
-    name: 'End-to-End eCommerce Platforms',
+    name: 'end-to-end ecommerce platforms',
     icon: ShoppingCart,
-    description: 'Full-stack online retail stores designed for security, easy inventory management, and maximizing sales volume.',
+    description: 'full-stack online retail stores designed for security, easy inventory management, and maximizing sales volume.',
     startingPrice: '₹99,999',
-    pricing: { BASIC: '₹99,999', PREMIUM: '₹1,99,999', CUSTOMIZE: 'Quote Available' },
-    includedInPlans: ['BASIC', 'PREMIUM', 'CUSTOMIZE'],
-    offer: '💳 Free Secure Payment Gateway Integration included.',
-    days: 'Built Right. Delivered On Time – 12 Month Guarantee.'
+    pricing: { basic: '₹99,999', premium: '₹1,99,999', customize: 'quote' },
+    includedInPlans: ['basic', 'premium', 'customize'],
+    offer: '💳 free secure payment gateway integration included.',
+    days: 'built right. delivered on time – 12 month guarantee.'
   },
 ];
 
@@ -64,184 +74,124 @@ const PlansHome = () => {
   const [selectedFeature, setSelectedFeature] = useState(features[0]);
 
   return (
-    <section className="relative bg-[#030303] text-white py-32 px-6 overflow-hidden">
+    <section className="relative bg-[#030303] text-white py-24 md:py-32 px-4 md:px-12 overflow-hidden font-light tracking-tight">
       
-      {/* --- PREMIUM BACKGROUND AMBIENCE --- */}
-      <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-emerald-600/10 blur-[150px] rounded-full animate-pulse pointer-events-none" />
-      <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-cyan-600/10 blur-[150px] rounded-full pointer-events-none" />
+      {/* Background Decor */}
+      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-600/5 blur-[120px] rounded-full pointer-events-none" />
 
       <div className="max-w-7xl mx-auto relative z-10">
         
-        {/* Header Section */}
-        <div className="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
-          <motion.div initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} className="max-w-2xl">
-            <span className="text-emerald-500 font-mono text-xs uppercase tracking-[0.5em] mb-4 block">
-              // Pricing & Value
-            </span>
-            <h2 className="text-5xl md:text-7xl font-black tracking-tighter leading-[0.9]">
-              INVEST IN <br /> 
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-400">YOUR GROWTH.</span>
-            </h2>
-          </motion.div>
-          <p className="text-gray-500 max-w-sm text-sm md:text-base leading-relaxed border-l border-emerald-500/30 pl-6">
-            Transparent pricing models designed to scale with your business goals. No hidden fees, just results.
-          </p>
+        {/* --- HEADER --- */}
+        <div className="max-w-3xl mb-20">
+          <motion.p 
+            initial={{ opacity: 0 }} 
+            whileInView={{ opacity: 1 }} 
+            className="text-blue-500 font-mono text-[10px] tracking-[0.5em] mb-6 uppercase"
+          >
+            // scaling digital commerce
+          </motion.p>
+          <h2 className="text-4xl md:text-7xl font-extralight lowercase leading-[1.1] mb-8">
+            invest in your <span className="text-white/30 italic">growth.</span> transparent <span className="text-blue-500 font-normal">pricing models.</span>
+          </h2>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20">
           
-          {/* 1. LEFT SIDE - SERVICE NAVIGATION (Bento Menu) */}
-          <div className="lg:col-span-4 space-y-4">
-            <div className="bg-white/[0.03] border border-white/10 rounded-[2.5rem] p-6 backdrop-blur-xl">
-              <h3 className="text-xs font-bold text-gray-500 uppercase tracking-widest mb-6 px-2 flex items-center gap-2">
-                <TrendingUp size={14} className="text-emerald-500" /> Select Service
-              </h3>
-              <div className="flex flex-col gap-3">
-                {features.map((feature, index) => (
-                  <motion.div
-                    key={index}
-                    whileHover={{ x: 10 }}
-                    onClick={() => setSelectedFeature(feature)}
-                    className={`group cursor-pointer p-5 rounded-2xl flex items-center justify-between transition-all duration-500 border ${
-                      selectedFeature.name === feature.name
-                        ? 'bg-emerald-500 text-black border-emerald-500 shadow-[0_10px_30px_rgba(16,185,129,0.3)]'
-                        : 'bg-white/5 border-white/5 hover:border-white/20'
-                    }`}
-                  >
-                    <div className="flex items-center gap-4">
-                      <feature.icon size={20} className={selectedFeature.name === feature.name ? 'text-black' : 'text-emerald-500'} />
-                      <span className="text-sm font-bold tracking-tight uppercase">
-                        {feature.name.split(' ')[0]} {feature.name.split(' ')[1] || ''}
-                      </span>
-                    </div>
-                    <ArrowRight size={16} className={`opacity-0 group-hover:opacity-100 transition-all ${selectedFeature.name === feature.name ? 'text-black' : 'text-emerald-500'}`} />
-                  </motion.div>
-                ))}
-              </div>
-            </div>
+          {/* --- LEFT: SERVICE NAV --- */}
+          <div className="lg:col-span-4 space-y-2">
+            <p className="text-[10px] font-mono text-white/20 uppercase tracking-widest mb-6">select service</p>
+            {features.map((feature, index) => (
+              <button
+                key={index}
+                onClick={() => setSelectedFeature(feature)}
+                className={`w-full text-left py-4 px-2 border-b transition-all duration-500 flex items-center justify-between group
+                  ${selectedFeature.name === feature.name ? 'border-blue-500' : 'border-white/5 hover:border-white/20'}`}
+              >
+                <span className={`text-lg capitalize transition-all ${selectedFeature.name === feature.name ? 'text-white' : 'text-white group-hover:text-white/60'}`}>
+                  {feature.name}
+                </span>
+                <ArrowRight size={14} className={`transition-all duration-500 ${selectedFeature.name === feature.name ? 'opacity-100 translate-x-0 text-blue-500' : 'opacity-0 -translate-x-4'}`} />
+              </button>
+            ))}
 
-            {/* Support/Guarantee Card */}
-            <div className="bg-gradient-to-br from-emerald-600/20 to-transparent border border-emerald-500/20 rounded-[2rem] p-8">
-              <ShieldCheck className="text-emerald-500 mb-4" size={32} />
-              <h4 className="font-bold text-lg mb-2 tracking-tight">Ecoavenstra Trust</h4>
-              <p className="text-xs text-gray-400 leading-relaxed">Every project includes a dedicated manager and 24/7 technical support post-launch.</p>
+            <div className="mt-12 p-6 rounded-3xl bg-white/[0.02] border border-white/5 space-y-4">
+              <ShieldCheck size={20} className="text-blue-500/40" />
+              <p className="text-[10px] text-white/40 leading-relaxed capitalize font-mono">
+                every project includes a dedicated manager and 24/7 technical support post-launch. built for longevity.
+              </p>
             </div>
           </div>
 
-          {/* 2. RIGHT SIDE - DYNAMIC DISPLAY CARD */}
-          <div className="lg:col-span-8 h-full">
+          {/* --- RIGHT: DYNAMIC DISPLAY --- */}
+          <div className="lg:col-span-8">
             <AnimatePresence mode="wait">
               <motion.div
                 key={selectedFeature.name}
-                initial={{ opacity: 0, scale: 0.95 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 1.05 }}
-                transition={{ duration: 0.4 }}
-                className="bg-zinc-900/40 border border-white/10 rounded-[3rem] h-full flex flex-col p-8 md:p-14 relative overflow-hidden backdrop-blur-md"
+                initial={{ opacity: 0, y: 15 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -15 }}
+                transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+                className="bg-[#050505] border border-white/5 rounded-[3rem] p-8 md:p-16 relative"
               >
-                {/* Background Decor */}
-                <div className="absolute top-0 right-0 p-10 opacity-5 pointer-events-none">
-                  <selectedFeature.icon size={250} />
-                </div>
-
-                {/* Content Header */}
-                <div className="relative z-10 mb-12">
-                  <div className="flex flex-wrap items-center gap-4 mb-6">
-                    <div className="px-4 py-1.5 bg-emerald-500/10 border border-emerald-500/20 rounded-full text-[10px] font-bold tracking-[0.2em] text-emerald-400 uppercase">
-                      Featured Solution
-                    </div>
-                    <div className="flex items-center gap-2 text-gray-500 text-[10px] font-bold tracking-[0.2em] uppercase">
-                      <Clock size={12} /> {selectedFeature.days.split('–')[1]}
-                    </div>
+                {/* Top Meta */}
+                <div className="flex flex-wrap items-center gap-6 mb-10">
+                  <div className="flex items-center gap-2 text-[10px] font-mono text-blue-500 tracking-widest uppercase bg-blue-500/5 px-3 py-1 rounded-full">
+                    <Clock size={12} /> {selectedFeature.days.split('–')[1]}
                   </div>
-                  <h3 className="text-4xl md:text-5xl font-black tracking-tighter mb-6 uppercase italic">
-                    {selectedFeature.name}
-                  </h3>
-                  <p className="text-gray-400 text-lg leading-relaxed max-w-2xl">
-                    {selectedFeature.description}
-                  </p>
+                  <span className="text-[10px] font-mono text-white/20 uppercase tracking-widest italic">starting at {selectedFeature.startingPrice}</span>
                 </div>
 
-                {/* PRICING GRID */}
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-10 relative z-10">
-                  {['BASIC', 'PREMIUM', 'CUSTOMIZE'].map((plan) => {
+                {/* Description */}
+                <h3 className="text-3xl md:text-5xl font-extralight capitalize  mb-6 tracking-tight">
+                  {selectedFeature.name}
+                </h3>
+                <p className="text-white/40 text-base md:text-lg leading-relaxed mb-16 max-w-2xl lowercase">
+                  {selectedFeature.description}
+                </p>
+
+                {/* Pricing Grid */}
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mb-16">
+                  {['basic', 'premium', 'customize'].map((plan) => {
                     const isIncluded = selectedFeature.includedInPlans.includes(plan);
                     const price = selectedFeature.pricing[plan];
-                    
                     return (
-                      <div 
-                        key={plan}
-                        className={`group p-8 rounded-[2rem] border transition-all duration-500 flex flex-col justify-between ${
-                          isIncluded 
-                            ? 'bg-white/5 border-emerald-500/30 hover:border-emerald-500 hover:bg-emerald-500/5' 
-                            : 'bg-black/20 border-white/5 opacity-40'
-                        }`}
-                      >
-                        <div>
-                          <div className="flex justify-between items-center mb-6">
-                            <span className="text-[10px] font-bold tracking-[0.3em] text-emerald-500">{plan}</span>
-                            {isIncluded ? <CheckCircle size={14} className="text-emerald-500" /> : <XCircle size={14} className="text-gray-600" />}
-                          </div>
-                          <div className="text-2xl font-black tracking-tight mb-2">
-                            {price || "N/A"}
-                          </div>
-                        </div>
-                        <p className="text-[10px] text-gray-500 uppercase font-bold tracking-widest mt-4">
-                          {plan === 'CUSTOMIZE' ? 'Scalable Plan' : 'Flat Pricing'}
-                        </p>
+                      <div key={plan} className={`flex flex-col gap-3 ${!isIncluded ? 'opacity-10 grayscale' : 'opacity-100'}`}>
+                        <span className="text-[10px] font-mono text-blue-500/60 uppercase tracking-[0.2em]">{plan}</span>
+                        <div className="text-2xl font-light tracking-tighter lowercase">{price || 'n/a'}</div>
+                        <div className="h-[1px] w-8 bg-white/10" />
                       </div>
                     );
                   })}
                 </div>
 
-                {/* OFFER & CTA */}
-                <div className="mt-auto relative z-10 flex flex-col md:flex-row items-center gap-6">
-                  {selectedFeature.offer && (
-                    <motion.div 
-                      animate={{ y: [0, -5, 0] }}
-                      transition={{ duration: 4, repeat: Infinity }}
-                      className="flex-1 p-6 bg-gradient-to-r from-emerald-600/20 to-cyan-600/20 border border-emerald-500/30 rounded-2xl flex items-center gap-4 group hover:border-emerald-500 transition-all"
-                    >
-                      <Sparkles className="text-emerald-400 shrink-0 group-hover:rotate-12 transition-transform" />
-                      <p className="text-xs md:text-sm font-bold text-emerald-100 italic leading-snug">
-                        {selectedFeature.offer}
-                      </p>
-                    </motion.div>
-                  )}
+                {/* Offer Area */}
+                <div className="flex flex-col md:flex-row items-center justify-between gap-8 pt-10 border-t border-white/5">
+                  <div className="flex items-start gap-4 flex-1">
+                    <Sparkles size={18} className="text-blue-400 shrink-0 mt-1" />
+                    <p className="text-xs md:text-sm italic text-white/50 leading-relaxed lowercase font-light">
+                      {selectedFeature.offer}
+                    </p>
+                  </div>
                   
-                  <button className="w-full md:w-auto px-10 py-6 bg-white text-black font-black text-xs uppercase tracking-[0.3em] rounded-2xl hover:bg-emerald-500 transition-all shadow-[0_20px_40px_rgba(0,0,0,0.3)] hover:shadow-emerald-500/20 active:scale-95 flex items-center justify-center gap-3">
-                    Start Project <SendIcon size={14} />
-                  </button>
+                  <motion.a 
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                    href="/contact-us"
+                    className="w-full md:w-auto px-8 py-4 bg-white text-black rounded-full text-[11px] font-bold uppercase tracking-widest hover:bg-blue-500 hover:text-white transition-all duration-500 flex items-center justify-center gap-3"
+                  >
+                    start project <ArrowRight size={14} />
+                  </motion.a>
                 </div>
 
-                {/* Visual "Scanline" Animation */}
-                <div className="absolute inset-0 pointer-events-none overflow-hidden opacity-10">
-                  <div className="w-full h-[1px] bg-emerald-500 animate-scan" />
-                </div>
+                {/* Ambient Internal Glow */}
+                <div className="absolute -bottom-20 -right-20 w-64 h-64 bg-blue-600/10 blur-[100px] pointer-events-none" />
               </motion.div>
             </AnimatePresence>
           </div>
         </div>
       </div>
-
-      <style jsx global>{`
-        @keyframes scan {
-          0% { transform: translateY(-100%); }
-          100% { transform: translateY(1000%); }
-        }
-        .animate-scan {
-          animation: scan 8s linear infinite;
-        }
-      `}</style>
     </section>
   );
 };
-
-const SendIcon = ({ size }) => (
-  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
-    <line x1="22" y1="2" x2="11" y2="13"></line>
-    <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
-  </svg>
-);
 
 export default PlansHome;
