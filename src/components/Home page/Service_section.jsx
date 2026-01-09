@@ -46,7 +46,7 @@ const Service_section = () => {
         {/* Heading 2 with Gradient */}
         <motion.h2
           variants={fadeInUp}
-          className="bg-gradient-to-r from-amber-200 via-rose-400 to-purple-500 bg-clip-text text-transparent text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold mt-1 md:mt-4"
+          className="bg-gradient-to-r from-white via-green-400 to-blue-500 bg-clip-text text-transparent text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold mt-1 md:mt-4"
         >
           Designed for Growth.
         </motion.h2>

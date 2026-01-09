@@ -69,11 +69,11 @@ const PremiumLanding = () => {
             initial={{ y: 100, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-            className="text-[16vw] md:text-[13vw] font-black uppercase leading-[0.8] tracking-tighter"
+            className="text-[16vw] md:text-[12vw] font-black uppercase leading-[0.8] tracking-tighter p-4"
           >
-            DESIGN <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-b from-white via-white/80 to-white/20">
-              DRIVEN
+            DESIGN <br /> 
+            <span className="text-transparent p-2 bg-clip-text bg-gradient-to-b from-white via-white/80 to-white/20">
+             & DEVELOP
             </span>
           </motion.h1>
           
@@ -109,7 +109,7 @@ const PremiumLanding = () => {
           <motion.div 
             animate={{ x: [0, -1000] }}
             transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
-            className="flex gap-20 text-[11px] uppercase tracking-[0.8em] font-bold text-white/20 whitespace-nowrap italic"
+            className="flex gap-20 mt-4 pt-4 text-[11px] uppercase tracking-[0.8em] font-bold text-white/20 whitespace-nowrap italic"
           >
             {services.concat(services).map((s, i) => (
               <span key={i} className="flex items-center gap-10">
@@ -140,12 +140,12 @@ const PremiumLanding = () => {
             </div>
             
             <div className="relative z-10">
-              <h3 className="text-6xl md:text-8xl font-black uppercase tracking-tighter leading-[0.85] mb-8">
+              <h3 className="text-6xl md:text-8xl   tracking-tighter leading-[0.85] mb-8">
                 UI / UX <br /> <span className="text-white/20 italic">Design</span>
               </h3>
-              <div className="flex gap-4">
+              <div className="flex gap-4 md:flex-wrap p-2">
                 {['Figma', 'Prototyping', 'User Flow'].map(tag => (
-                  <span key={tag} className="text-[9px] uppercase tracking-widest px-4 py-1.5 border border-white/5 rounded-full bg-white/5 text-gray-500">{tag}</span>
+                  <span key={tag} className="text-[9px] uppercase tracking-widest px-6 pr-3 py-1.5 border border-white/5 rounded-full bg-white/5 text-gray-500">{tag}</span>
                 ))}
               </div>
             </div>
@@ -157,14 +157,14 @@ const PremiumLanding = () => {
           {/* Card 2: Web Dev (Clean Modern White) */}
           <motion.div 
             whileHover={{ y: -15 }}
-            className="md:col-span-4 h-[600px] bg-white text-black rounded-[4rem] p-16 flex flex-col justify-between group overflow-hidden shadow-[0_50px_100px_-20px_rgba(255,255,255,0.1)] transition-all duration-500"
+            className="md:col-span-4 h-[600px] bg-lime-200 text-black rounded-[4rem] p-16 flex flex-col justify-between group overflow-hidden shadow-[0_50px_100px_-20px_rgba(255,255,255,0.1)] transition-all duration-500"
           >
             <div className="flex justify-between items-start">
               <span className="text-[10px] font-black tracking-[0.5em] text-black/40 uppercase italic">02 / Build</span>
               <Zap size={32} className="fill-black group-hover:scale-125 transition-transform duration-700" />
             </div>
             <div>
-              <h3 className="text-5xl font-black uppercase leading-[0.9] tracking-tighter mb-8 italic">Full Stack <br /> Engineering</h3>
+              <h3 className="text-5xl  leading-[0.9] tracking-tighter mb-8 italic">Full Stack <br /> Engineering</h3>
               <div className="flex items-center gap-4 group/btn">
                 <div className="h-[2px] w-12 bg-black group-hover:w-full transition-all duration-700" />
                 <span className="whitespace-nowrap text-[10px] font-black uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-all">Scalable Code</span>
@@ -174,7 +174,7 @@ const PremiumLanding = () => {
 
           {/* Card 3: SaaS (Wide Gradient Card) */}
           <motion.div 
-            className="md:col-span-12 p-20 rounded-[4rem] bg-[#0a0a0a] border border-white/5 flex flex-col md:flex-row justify-between items-center group relative overflow-hidden"
+            className="md:col-span-12 p-20 rounded-[4rem] bg-[#3ca7f8] border border-white/5 flex flex-col md:flex-row justify-between items-center group relative overflow-hidden"
           >
             <div className="absolute inset-0 bg-gradient-to-br from-blue-600/10 via-transparent to-emerald-500/10 opacity-50" />
             
@@ -182,7 +182,7 @@ const PremiumLanding = () => {
               <span className="text-[10px] font-bold tracking-[0.5em] text-emerald-400 uppercase flex items-center gap-2 justify-center md:justify-start">
                 <Shield size={14} /> 03 / Efficiency
               </span>
-              <h3 className="text-5xl md:text-7xl font-black uppercase tracking-tighter mt-4 leading-none">
+              <h3 className="text-5xl md:text-5xl  tracking-tighter mt-4 leading-none">
                 SaaS <br className="md:hidden" /> Solutions
               </h3>
             </div>
