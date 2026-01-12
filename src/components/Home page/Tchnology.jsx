@@ -10,7 +10,7 @@ const techData = [
     icon: <LayoutDashboard className="text-blue-400 w-6 h-6" />,
     color: "blue",
     categories: [
-      { subtitle: 'Technologies', items: 'HTML5, CSS3, Tailwind, JS, TS' },
+      { subtitle: 'Technologies', items: 'HTML5, CSS3, Tailwind, JS, TS, Bootstrap' },
       { subtitle: 'Frameworks', items: 'ReactJS, NextJs, Redux, ShadCn' }
     ]
   },
@@ -20,7 +20,7 @@ const techData = [
     color: "green",
     categories: [
       { subtitle: 'Technologies', items: 'NodeJS, Express, MongoDB, Postgres' },
-      { subtitle: 'Tools', items: 'JWT, Supabase, Firebase, Microservices' }
+      { subtitle: 'Tools', items: 'JWT,  Firebase, Microservices,Postman' }
     ]
   },
   {
@@ -29,7 +29,7 @@ const techData = [
     color: "purple",
     categories: [
       { subtitle: 'CI/CD', items: 'Github Actions, Jenkins, Azure' },
-      { subtitle: 'Monitoring', items: 'Prometheus, Grafana, ELK Stack' }
+      { subtitle: 'Monitoring', items: ' Grafana, ELK Stack' }
     ]
   },
   {
@@ -37,7 +37,7 @@ const techData = [
     icon: <Cloud className="text-cyan-400 w-6 h-6" />,
     color: "cyan",
     categories: [
-      { subtitle: 'Providers', items: 'AWS, Azure, GCP, Vercel, Netlify' },
+      { subtitle: 'Providers', items: 'AWS, Azure, GCP, Vercel, Netlify  , Hostinger' },
       { subtitle: 'Libraries', items: 'Serverless, AWS CLI' }
     ]
   }

@@ -118,7 +118,7 @@ const Work = () => {
                   <motion.img
                     src={projects[currentIndex].image}
                     alt={projects[currentIndex].title}
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-fit-cover group-hover:scale-105 transition-transform duration-700"
                     whileHover={{ scale: 1.05 }}
                     transition={{ duration: 1.5 }}
                   />

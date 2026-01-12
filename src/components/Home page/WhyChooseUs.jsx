@@ -48,7 +48,7 @@ export default function WhyChooseUs() {
           <motion.div 
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
-            className="lg:col-span-7 relative group rounded-[3rem]  overflow-hidden border  border-white/10 h-[400px]"
+            className="lg:col-span-7 relative group rounded-[3rem]  overflow-hidden border  border-white/10 h-[700px]"
           >
             <img 
               src={WhyChoose} 

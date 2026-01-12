@@ -73,7 +73,7 @@ const PremiumLanding = () => {
           >
             DESIGN <br /> 
             <span className="text-transparent p-2 bg-clip-text bg-gradient-to-b from-white via-white/80 to-white/20">
-             & DEVELOP
+              DEVELOP deploy
             </span>
           </motion.h1>
           
@@ -152,7 +152,7 @@ const PremiumLanding = () => {
             
             {/* Animated Grid Background for Card */}
             <div className="absolute inset-0 opacity-10 pointer-events-none bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:20px_20px]" />
-          </motion.div>
+          </motion.div> 
 
           {/* Card 2: Web Dev (Clean Modern White) */}
           <motion.div 

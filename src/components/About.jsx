@@ -50,7 +50,7 @@ const About = () => {
 
         <div className="relative z-10 container mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <motion.div initial={{ opacity: 0, x: -50 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 1 }}>
-            <span className="text-blue-400 font-mono text-xs tracking-[0.5em] uppercase mb-6= block">Est. 2022 Ecoaventra</span>
+            <span className="text-blue-400 font-mono text-xs tracking-[0.5em] uppercase mb-6= block">Est. 2022 Ecoavenstra</span>
             <h1 className="text-7xl md:text-8xl font-lite capitalize tracking-tighter leading-none mb-8">
               Crafting <br /> <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-white/20 italic">Digital  Pride.</span>
             </h1>
@@ -122,6 +122,10 @@ const About = () => {
               { img: team1, name: "Venendra Kumar", role: "TECH LEAD ENGINEER", color: "from-blue-600" },
               { img: team2, name: "Khusbhu Parihar", role: "DIRECTOR", color: "from-purple-600" },
               { img: team3, name: "Rahul Barve", role: "FULL STACK DEV", color: "from-emerald-500" },
+              // {img: team1, name: "Amit Patil", role: "UI/UX DESIGNER", color: "from-pink-500" },
+              // {img: team3, name: "Sonal Sharma", role: "PROJECT MANAGER", color: "from-yellow-500" },
+              // {img: team2, name: "Rohit Singh", role: "BACKEND DEVELOPER", color: "from-green-500" },
+              // {img: team2, name: "Anjali Verma", role: "FRONTEND DEVELOPER", color: "from-red-500" },
 
               
             ].map((m, i) => (
