@@ -155,8 +155,8 @@ export default function ServicesGrid() {
           >
             <div className="flex justify-between items-start relative z-10">
               <div className="space-y-4">
-                <span className="text-blue-500 font-mono text-[10px] tracking-widest font-bold">{service.number} // {service.subtitle}</span>
-                <h3 className="text-2xl font-black text-white uppercase tracking-tighter leading-tight">
+                <span className="text-blue-500  text-[10px] tracking-widest font-lite">{service.number} // {service.subtitle}</span>
+                <h3 className="text-2xl lowercase  text-white  tracking-tighter font-semibold leading-tight">
                   {service.title}
                 </h3>
                 <div className="flex flex-wrap gap-2">

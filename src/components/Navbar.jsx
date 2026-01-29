@@ -218,14 +218,14 @@ const Navbar = () => {
                   <Link 
                     to={item.path}
                     onClick={() => setMobileOpen(false)}
-                    className="text-5xl font-black tracking-tighter hover:text-green-500 transition-all duration-300"
+                    className="text-5xl font-black text-white tracking-tighter hover:text-green-500 transition-all duration-300"
                   >
                     {item.label}
                   </Link>
                 </motion.div>
               ))}
 
-              <motion.div 
+              <motion.div  
                 initial={{ width: 0 }}
                 animate={{ width: "100%" }}
                 className="h-px bg-white/10 max-w-xs" 
@@ -236,7 +236,7 @@ const Navbar = () => {
                   whileTap={{ scale: 0.95 }}
                   onClick={() => { setMobileOpen(false); navigate("/login"); }}
                   className="w-full max-w-xs py-5 bg-white text-black rounded-full font-black text-xl uppercase tracking-widest"
-                >
+                hover:bg-green-500 >
                   Login
                 </motion.button>
               ) : (
