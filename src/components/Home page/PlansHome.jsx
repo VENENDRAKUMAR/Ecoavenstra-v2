@@ -11,7 +11,7 @@ const features = [
   {
     name: 'full-stack web development',
     icon: Globe,
-    description: 'we build future-proof, scalable, and fully responsive websites tailored to drive your brand growth with precision engineering.',
+    description: 'we build future-proof, scalable, and fully responsive websites ,Web Solutions ,Software Solution tailored to drive your brand growth with precision engineering.',
     startingPrice: '₹49,999',
     pricing: { basic: '₹49,999', premium: '₹99,999', customize: 'quote' },
     includedInPlans: ['basic', 'premium', 'customize'],

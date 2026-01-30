@@ -8,7 +8,7 @@ import {
 } from "react-icons/ri";
 
 const icons = [
-  { Icon: RiInstagramLine, alt: "instagram", link: "https://instagram.com" },
+  { Icon: RiInstagramLine, alt: "instagram", link: "https://www.instagram.com/ecoavenstra/" },
   { Icon: RiFacebookCircleLine, alt: "facebook", link: "https://www.facebook.com/Ecoavenstra/" },
   { Icon: RiLinkedinBoxLine, alt: "linkedin", link: "https://www.linkedin.com/company/ecoavenstra-hr-infotech-pvt-ltd/" },
   { Icon: RiWhatsappLine, alt: "whatsapp", link: "https://wa.me/+919752505639" },

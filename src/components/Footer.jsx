@@ -1,172 +1,148 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
+import { 
+  RiInstagramLine, 
+  RiFacebookCircleLine, 
+  RiLinkedinBoxLine, 
+  RiWhatsappLine 
+} from "react-icons/ri";
 
-import GridBackground from "/images/why-us.jpg";
-import { CiLocationOn, CiPhone, CiMail } from "react-icons/ci";
-import { motion } from "framer-motion";
-
-const Title = () => (
-  <a href="/">
-    <motion.img
-      initial={{ opacity: 0, y: -10 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.7 }}
-      className="h-12 px-4 pt-3"
-      alt="logo"
-      src="/images/logo.png"
-    />
-  </a>
-);
+const footerIcons = [
+  { 
+    Icon: RiInstagramLine, 
+    link: "https://instagram.com", 
+    color: "#E4405F" 
+  },
+  { 
+    Icon: RiFacebookCircleLine, 
+    link: "https://www.facebook.com/Ecoavenstra/", 
+    color: "#1877F2" 
+  },
+  { 
+    Icon: RiLinkedinBoxLine, 
+    link: "https://www.linkedin.com/company/ecoavenstra-hr-infotech-pvt-ltd/", 
+    color: "#0A66C2" 
+  },
+  { 
+    Icon: RiWhatsappLine, 
+    link: "https://wa.me/+919752505639", 
+    color: "#25D366" 
+  },
+];
 
 const Footer = () => {
   return (
-    <footer
-      className="relative text-white pt-10 overflow-hidden"
-      style={{
-        backgroundImage: `url(${GridBackground})`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        backgroundRepeat: "no-repeat",
-      }}
-    >
-      {/* Dark Glass Overlay */}
-      <div className="absolute inset-0 bg-black/70 backdrop-blur-md z-0"></div>
+    <footer className="relative bg-[#050505] text-white pt-20 pb-10 overflow-hidden border-t border-white/5">
+      
+      {/* --- BACKGROUND AMBIENT GLOWS --- */}
+      <div className="absolute top-0 left-1/4 w-96 h-96 bg-blue-600/5 blur-[120px] rounded-full pointer-events-none" />
+      <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-green-500/5 blur-[120px] rounded-full pointer-events-none" />
 
-      {/* Floating Gradient Glow */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 0.4 }}
-        transition={{ duration: 1 }}
-        className="absolute inset-0 bg-gradient-to-b from-green-600/10 via-transparent to-black/50 z-0"
-      />
-
-      {/* Content */}
-      <div className="relative z-10 mx-auto w-full max-w-screen-xl p-6 lg:py-14">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="md:flex md:justify-between"
-        >
-          {/* Logo */}
-          <div className="mb-8 md:mb-0">
-            <Link to="/" className="flex items-center">
-              <Title />
-            </Link>
-          </div>
-
-          {/* Links */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-10 px-4 sm:px-10">
-
-            {/* Contact */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-            >
-              <h2 className="mb-6 text-sm font-semibold uppercase text-green-400 tracking-wider">
-                Contact Info
-              </h2>
-              <ul className="text-gray-300 text-sm space-y-4">
-                <li className="flex items-center hover:text-green-400 transition">
-                  <CiMail className="mr-2 text-green-400 text-lg" />
-                  <a href="mailto:info@ecoavenstra.com" className="hover:underline">
-                    info@ecoavenstra.com
-                  </a>
-                </li>
-
-                <li className="flex items-center hover:text-green-400 transition">
-                  <CiMail className="mr-2 text-green-400 text-lg" />
-                  <a href="mailto:business@ecoavenstra.com" className="hover:underline">
-                    business@ecoavenstra.com
-                  </a>
-                </li>
-
-                <li className="flex items-center hover:text-green-400 transition">
-                  <CiPhone className="mr-2 text-green-400 text-lg" />
-                  <a href="tel:+919752505639" className="hover:underline">
-                    (+91) 9752505639
-                  </a>
-                </li>
-
-                <li className="flex items-center hover:text-green-400 transition">
-                  <CiLocationOn className="mr-2 text-green-400 text-lg" />
-                  <span>Kesri Nagar, Barapatthar, Seoni (M.P) - India</span>
-                </li>
-              </ul>
-            </motion.div>
-
-            {/* Legal */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
-            >
-              <h2 className="mb-6 text-sm font-semibold uppercase text-green-400 tracking-wider">
-                Legal
-              </h2>
-              <ul className="text-gray-300 text-sm space-y-4">
-                <li>
-                  <a href="#" className="hover:text-green-400 hover:underline transition">
-                    Privacy Policy
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="hover:text-green-400 hover:underline transition">
-                    Terms & Conditions
-                  </a>
-                </li>
-              </ul>
-            </motion.div>
-          </div>
-        </motion.div>
-
-        {/* Divider */}
-        <motion.hr
-          initial={{ width: "0%" }}
-          whileInView={{ width: "100%" }}
-          transition={{ duration: 1 }}
-          className="my-10 border-gray-600"
-        />
-
-        {/* Lower Footer */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.8 }}
-          className="sm:flex sm:items-center sm:justify-between text-sm text-gray-400"
-        >
-          <span>
-            © {new Date().getFullYear()}
-            <a href="/" className="hover:underline text-white ml-2">
-              Ecoavenstra HR Infotech Pvt Ltd
-            </a>
-            . All Rights Reserved.
-          </span>
-
-          {/* Social Icons Placeholder */}
-          <div className="flex gap-4 text-xl mt-4 sm:mt-0 text-gray-400">
-            <motion.a
-              whileHover={{ scale: 1.2, color: "#22c55e" }}
-              className="cursor-pointer"
-            >
-              <i className="ri-instagram-line"></i>
-            </motion.a>
-            <motion.a
-              whileHover={{ scale: 1.2, color: "#22c55e" }}
-              className="cursor-pointer"
-            >
-              <i className="ri-facebook-circle-line"></i>
-            </motion.a>
-            <motion.a
-              whileHover={{ scale: 1.2, color: "#22c55e" }}
-              className="cursor-pointer"
-            >
-              <i className="ri-twitter-x-line"></i>
-            </motion.a>
-          </div>
-        </motion.div>
+      {/* HUGE BACKGROUND WATERMARK */}
+      <div className="absolute top-40 left-1/2 -translate-x-1/2 select-none pointer-events-none w-full text-center">
+        <h2 className="text-[14vw] font-black uppercase leading-none opacity-[0.02] tracking-tighter text-white">
+          ECOAVENSTRA
+        </h2>
       </div>
+
+      <div className="relative z-10 max-w-7xl mx-auto px-6">
+        
+        {/* --- MAIN GRID --- */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 mb-20">
+          
+          {/* Left Side: Brand Identity */}
+          <div className="lg:col-span-5 space-y-8">
+            <Link to="/" className="inline-block">
+              <img src="/images/logo.png" alt="Logo" className="h-10 brightness-125 hover:scale-105 transition-transform" />
+            </Link>
+            <p className="text-gray-400 text-lg max-w-sm leading-relaxed font-medium">
+              We design and build <span className="text-white font-bold">high-performance</span> digital systems for the world's most ambitious brands.
+            </p>
+          </div>
+
+          {/* Right Side: Navigation & Contact */}
+          <div className="lg:col-span-7 grid grid-cols-1 md:grid-cols-3 gap-12">
+            
+            {/* Quick Links */}
+            <div>
+              <h4 className="text-[10px] font-black uppercase tracking-[0.4em] text-white/40 mb-8">Navigation</h4>
+              <ul className="space-y-4 font-bold text-sm">
+                {['Home', 'About', 'Services', 'Jobs', 'Contact Us'].map(link => (
+                  <li key={link}>
+                    <Link 
+                      to={link === 'Home' ? '/' : `/${link.toLowerCase().replace(/\s+/g, '-')}`} 
+                      className="text-gray-400 hover:text-blue-500 transition-colors"
+                    >
+                      {link}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Contact Info */}
+            <div className="md:col-span-2">
+              <h4 className="text-[10px] font-black uppercase tracking-[0.4em] text-white/40 mb-8">Get in touch</h4>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-sm">
+                <div className="space-y-6">
+                  <a href="mailto:info@ecoavenstra.com" className="group flex flex-col">
+                    <span className="text-gray-500 group-hover:text-blue-500 transition-colors">General Inquiries</span>
+                    <span className="font-bold text-base">info@ecoavenstra.com</span>
+                  </a>
+                  <a href="tel:+919752505639" className="group flex flex-col">
+                    <span className="text-gray-500 group-hover:text-green-500 transition-colors">Direct Support</span>
+                    <span className="font-bold text-base">(+91) 9752505639</span>
+                  </a>
+                </div>
+                <div className="space-y-2">
+                  <span className="text-gray-500">Location</span>
+                  <p className="font-bold leading-relaxed">
+                    Kesri Nagar, Barapatthar, <br />
+                    Seoni (M.P) - India
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* --- BOTTOM SECTION --- */}
+        <div className="pt-10 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-8">
+          
+          {/* Copyright & Legal Links */}
+          <div className="text-[11px] font-bold text-gray-500 tracking-wide uppercase flex flex-wrap justify-center gap-4">
+            <span>© {new Date().getFullYear()} Ecoavenstra HR Infotech Pvt Ltd.</span>
+            <span className="hidden md:inline text-white/10">|</span>
+            <Link to="/privacy-policy" className="hover:text-white transition-colors">Privacy Policy</Link>
+            <span className="hidden md:inline text-white/10">|</span>
+            <Link to="/terms" className="hover:text-white transition-colors">Terms & Conditions</Link>
+          </div>
+
+          {/* Social Icons with Real Links & Colors */}
+          <div className="flex gap-4">
+            {footerIcons.map((item, i) => (
+              <motion.a 
+                key={i} 
+                href={item.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                whileHover={{ y: -5, scale: 1.1 }}
+                className="w-10 h-10 flex items-center justify-center rounded-xl bg-white/[0.03] border border-white/5 text-gray-400 transition-all cursor-pointer"
+                style={{ '--hover-color': item.color }}
+                onMouseEnter={(e) => e.currentTarget.style.color = item.color}
+                onMouseLeave={(e) => e.currentTarget.style.color = '#9ca3af'}
+              >
+                <item.Icon size={20} />
+              </motion.a>
+            ))}
+          </div>
+
+        </div>
+      </div>
+
+      {/* Animated Bottom Line */}
+      <div className="h-[2px] w-full bg-gradient-to-r from-transparent via-blue-600/50 to-transparent mt-10 opacity-50" />
     </footer>
   );
 };

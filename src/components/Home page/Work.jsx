@@ -153,26 +153,26 @@ const projects = [
     link: "https://ipod-classic-two.vercel.app/",
     color: "#06b6d4",
   },
-  {
-    id: 12,
-    title: "Venedra Kumar",
-    category: "Founder Portfolio",
-    icon: <User className="w-5 h-5" />,
-    description: "Official portfolio of Venedra Kumar, showcasing visionary leadership and strategic tech innovation.",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1974&auto=format&fit=crop",
-    link: "https://venedra-kumar.vercel.app/",
-    color: "#3b82f6",
-  },
-  {
-    id: 13,
-    title: "Rahul Patle",
-    category: "Developer Showcase",
-    icon: <Zap className="w-5 h-5" />,
-    description: "A creative digital space for Rahul Patle, highlighting cutting-edge web development and coding solutions.",
-    image: "/images/Rahul.png",
-    link: "https://www.rahulpatle.xyz/",
-    color: "#f59e0b",
-  }
+  // {
+  //   id: 12,
+  //   title: "Venedra Kumar",
+  //   category: "Founder Portfolio",
+  //   icon: <User className="w-5 h-5" />,
+  //   description: "Official portfolio of Venedra Kumar, showcasing visionary leadership and strategic tech innovation.",
+  //   image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1974&auto=format&fit=crop",
+  //   link: "https://venedra-kumar.vercel.app/",
+  //   color: "#3b82f6",
+  // },
+  // {
+  //   id: 13,
+  //   title: "Rahul Patle",
+  //   category: "Developer Showcase",
+  //   icon: <Zap className="w-5 h-5" />,
+  //   description: "A creative digital space for Rahul Patle, highlighting cutting-edge web development and coding solutions.",
+  //   image: "/images/Rahul.png",
+  //   link: "https://www.rahulpatle.xyz/",
+  //   color: "#f59e0b",
+  // }
  
 
 

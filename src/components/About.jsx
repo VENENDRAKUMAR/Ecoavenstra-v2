@@ -39,7 +39,7 @@ const About = () => {
   const dragRef = useRef(null);
 
   return (
-    <div className="min-h-screen bg-[#030303] text-white selection:bg-blue-500">
+    <div className="min-h-screen bg-[#030303] text-white selection:bg-blue-300">
       
       {/* --- HERO SECTION: CINEMATIC --- */}
       <header className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
@@ -50,7 +50,7 @@ const About = () => {
 
         <div className="relative z-10 container mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <motion.div initial={{ opacity: 0, x: -50 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 1 }}>
-            <span className="text-blue-400 font-mono text-xs tracking-[0.5em] uppercase mb-6= block">Est. 2022 Ecoavenstra</span>
+            <span className="text-blue-300 font-mono text-xs tracking-[0.5em] uppercase mb-6= block">Est. 2022 Ecoavenstra</span>
             <h1 className="text-7xl md:text-8xl font-lite capitalize tracking-tighter leading-none mb-8">
               Crafting <br /> <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-white/20 italic">Digital  Pride.</span>
             </h1>
@@ -70,13 +70,13 @@ const About = () => {
 
           {/* Interactive Cards Stack */}
           <div ref={dragRef} className="relative h-[500px] hidden lg:block">
-            <motion.div drag dragConstraints={dragRef} whileDrag={{ scale: 1.05 }} className="absolute top-0 left-0 w-72 p-8 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-[2.5rem] shadow-2xl z-30 cursor-grab active:cursor-grabbing">
+            <motion.div drag dragConstraints={dragRef} whileDrag={{ scale: 1.05 }} className="absolute top-0 left-0 w-72 p-8 bg-gradient-to-br from-blue-500 to-green-300 rounded-[2.5rem] shadow-2xl z-30 cursor-grab active:cursor-grabbing">
                <RiLightbulbFlashLine size={40} className="mb-6" />
                <h3 className="text-2xl font-bold mb-2">Think</h3>
                <p className="text-sm opacity-80">Product strategy & deep discovery.</p>
             </motion.div>
-            <motion.div drag dragConstraints={dragRef} className="absolute top-20 left-40 w-72 p-8 bg-[#111] border border-white/10 rounded-[2.5rem] shadow-2xl z-20 cursor-grab active:cursor-grabbing">
-               <RiBrushLine size={40} className="text-purple-500 mb-6" />
+            <motion.div drag dragConstraints={dragRef} className="absolute top-20 left-40 w-72 p-8 bg-[#A3F1AF] border border-white/10 rounded-[2.5rem] shadow-2xl z-20 cursor-grab active:cursor-grabbing">
+               <RiBrushLine size={40} className="text-white mb-6" />
                <h3 className="text-2xl font-bold mb-2">Design</h3>
                <p className="text-sm opacity-60">Cinematic UI & scalable systems.</p>
             </motion.div>
@@ -118,10 +118,15 @@ const About = () => {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
-              { img: team2, name: "Neelu B.", role: "CEO & DIRECTOR", color: "from-cyan-500" },
-              { img: team1, name: "Venendra Kumar", role: "TECH LEAD ENGINEER", color: "from-blue-600" },
+              { img: team2, name: "Neelu Bhagat.", role: "CEO & DIRECTOR", color: "from-cyan-500" },
+              { img: team1, name: "Venendra Kumar", role: " Project TECH LEAD ENGINEER", color: "from-blue-600" },
               { img: team2, name: "Khusbhu Parihar", role: "DIRECTOR", color: "from-purple-600" },
-              { img: team3, name: "Rahul Barve", role: "FULL STACK DEV", color: "from-emerald-500" },
+              { img: team3, name: "Rahul ", role: "FULL STACK DEV", color: "from-emerald-500" },
+              {img: team3, name: "Roopam .", role: "Software Engineer (Mobile)", color: "from-pink-500" },
+              {img: team2, name: "Miss. Swati", role: "UI/UX DESIGNER", color: "from-yellow-500" },
+              {img: team1, name: "Rohit ", role: "PROJECT MANAGER", color: "from-green-500" },
+              {img: team1, name: "Rahul Patle ", role: "Fullstacke DEVELOPER", color: "from-red-500" },
+
               // {img: team1, name: "Amit Patil", role: "UI/UX DESIGNER", color: "from-pink-500" },
               // {img: team3, name: "Sonal Sharma", role: "PROJECT MANAGER", color: "from-yellow-500" },
               // {img: team2, name: "Rohit Singh", role: "BACKEND DEVELOPER", color: "from-green-500" },
@@ -166,13 +171,13 @@ const About = () => {
             </div>
           </div>
 
-          <div className="bg-blue-500 p-12 rounded-[3rem] flex flex-col justify-between group cursor-pointer overflow-hidden relative">
+          <div className="bg-[#4A61BC] p-12 rounded-[3rem] flex flex-col justify-between group cursor-pointer overflow-hidden relative">
             <div className="absolute inset-0 bg-black translate-y-full group-hover:translate-y-0 transition-transform duration-700" />
             <div className="relative z-10">
               <h3 className="text-4xl font-lite mb-6  tracking-tighter">Vision</h3>
               <p className="text-white/80 group-hover:text-gray-400 transition-colors">To be the global studio trusted to ship high-impact digital experiences that earn pride.</p>
             </div>
-            <div className="relative z-10 w-16 h-16 rounded-full border border-white/30 flex items-center justify-center group-hover:border-cyan-500 transition-colors">
+            <div className="relative z-10 w-16 h-16 rounded-full border border-white/30 flex items-center justify-center group-hover:border-white/50 transition-colors">
               <BsArrowRight className="text-2xl group-hover:rotate-[-45deg] transition-transform" />
             </div>
           </div>

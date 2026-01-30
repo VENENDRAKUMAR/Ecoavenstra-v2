@@ -13,7 +13,7 @@ const services = [
     details: {
       services: ["/NEXT.JS CORE", "/PERFORMANCE", "/E-COMMERCE"],
       description: "ENGINEERING HIGH-SPEED DIGITAL INFRASTRUCTURE. WE DON'T JUST BUILD WEBSITES; WE BUILD CONVERSION ENGINES.",
-      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1000&auto=format&fit=crop",
+      image: "/images/web.jpg",
     },
   },
   {
@@ -24,7 +24,7 @@ const services = [
     details: {
       services: ["/USER PSYCHOLOGY", "/DESIGN SYSTEMS", "/PROTOTYPING"],
       description: "DESIGNING INTERFACES THAT FEEL NATURAL. WE FOCUS ON REDUCING COGNITIVE LOAD WHILE MAXIMIZING VISUAL IMPACT.",
-      image: "https://images.unsplash.com/photo-1558655146-d09347e92766?q=80&w=1000&auto=format&fit=crop",
+      image: "/images/ui.jpg",
     },
   },
   {
@@ -35,7 +35,7 @@ const services = [
     details: {
       services: ["/MULTI-TENANCY", "/DASHBOARDS", "/SUBSCRIPTIONS"],
       description: "FROM CONCEPT TO MARKET-READY SaaS. WE HANDLE THE COMPLEXITY OF SCALABLE CLOUD ARCHITECTURES.",
-      image: "https://images.unsplash.com/photo-1602265585142-6b221b9b2c24?q=80&w=1025&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      image: "/images/saas.jpg",
     },
   },
   {
@@ -46,7 +46,7 @@ const services = [
     details: {
       services: ["/LOGO SYSTEMS", "/STRATEGY", "/GUIDELINES"],
       description: "CRAFTING VISUAL IDENTITIES THAT RESONATE. WE DEFINE HOW THE WORLD PERCEIVES YOUR ENTERPRISE.",
-      image: "https://images.unsplash.com/photo-1590102425712-1c28a0d6b85b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8YnJhbmQlMjBpZGVudGl0eXxlbnwwfHwwfHx8MA%3D%3D",
+      image: "/images/brand.jpg",
     },
   },
 ]
@@ -58,24 +58,21 @@ export default function ServicesGrid() {
     <div className="w-full bg-[#030303] py-20 md:py-32 px-4 md:px-10 relative overflow-hidden">
       
       {/* Background Ambient Glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] md:w-[800px] h-[300px] md:h-[500px] bg-purple-600/10 blur-[120px] rounded-full pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] md:w-[800px] h-[300px] md:h-[500px] bg-blue-600/10 blur-[150px] rounded-full pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto mb-10 md:mb-16 flex justify-between items-end">
+      <div className="max-w-7xl mx-auto mb-16 flex justify-between items-end">
         <div>
-          <span className="text-blue-500 font-mono text-[10px] md:text-xs tracking-[0.4em] uppercase mb-4 block underline underline-offset-8 decoration-purple-500/30">
+          <span className="text-blue-500 font-mono text-[10px] md:text-xs tracking-[0.4em] uppercase mb-4 block">
             Our Expertise
           </span>
-          <h2 className="text-4xl md:text-5xl  tracking-tighter text-white  italic">
-            Core <span className="text-white/20">Solutions</span>
+          <h2 className="text-5xl md:text-7xl font-black tracking-tighter text-white uppercase leading-none">
+            Core <span className="text-white/20 italic font-light">Solutions</span>
           </h2>
         </div>
-        <p className="hidden md:block text-white/40 text-[10px] font-mono tracking-widest uppercase text-right">
-          Hover to explore <br /> technical parameters
-        </p>
       </div>
 
-      {/* --- DESKTOP VIEW (Accordion) --- */}
-      <div className="hidden lg:flex h-[650px] w-full border border-white/10 bg-[#050505] overflow-hidden rounded-[3rem] shadow-2xl shadow-purple-900/10">
+      {/* --- DESKTOP VIEW (Refined Accordion) --- */}
+      <div className="hidden lg:flex h-[700px] w-full border border-white/10 bg-[#050505] overflow-hidden rounded-[4rem]">
         {services.map((service) => {
           const isHovered = hoveredCard === service.id
           return (
@@ -84,57 +81,82 @@ export default function ServicesGrid() {
               onMouseEnter={() => setHoveredCard(service.id)}
               onMouseLeave={() => setHoveredCard(null)}
               animate={{
-                width: hoveredCard ? (isHovered ? "60%" : "13.33%") : "25%",
-                backgroundColor: isHovered ? "#080808" : "#050505"
+                width: hoveredCard ? (isHovered ? "65%" : "11.66%") : "25%",
+                backgroundColor: isHovered ? "#0a0a0a" : "#050505"
               }}
-              transition={{ duration: 0.7, ease: [0.23, 1, 0.32, 1] }}
+              transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
               className="relative border-r border-white/5 h-full cursor-pointer overflow-hidden group"
             >
-              {/* Vertical Title (Closed) */}
+              {/* Vertical Title (When Closed) */}
               <AnimatePresence>
                 {!isHovered && (
                   <motion.div
                     initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
-                    className="absolute inset-0 flex flex-col items-center justify-between py-12"
+                    className="absolute inset-0 flex flex-col items-center justify-between py-16"
                   >
-                    <span className="font-mono text-xs text-blue-500/50 font-bold">{service.number}</span>
-                    <h3 className="text-2xl   tracking-tighter text-white/30 rotate-180 [writing-mode:vertical-lr] whitespace-nowrap group-hover:text-white transition-colors lowercase font-semibold">
+                    <span className="font-mono text-xs text-blue-500 font-black">{service.number}</span>
+                    <h3 className="text-3xl font-black tracking-tighter text-white/20 rotate-180 [writing-mode:vertical-lr] whitespace-nowrap group-hover:text-blue-500 transition-colors uppercase">
                       {service.title}
                     </h3>
-                    <Sparkles size={14} className="text-white/10 group-hover:text-blue-500 transition-colors" />
+                    <Sparkles size={16} className="text-white/10" />
                   </motion.div>
                 )}
               </AnimatePresence>
 
               {/* Expanded Content */}
-              <div className={`absolute inset-0 p-12 flex flex-col transition-all duration-700 ${isHovered ? "opacity-100 scale-100" : "opacity-0 scale-95 pointer-events-none"}`}>
-                <div className="flex justify-between items-start mb-16">
-                  <div>
-                    <span className="text-blue-500 font-mono text-xs tracking-[0.3em] font-bold uppercase">{service.subtitle}</span>
-                    <h3 className="text-4xl gap-4 lowercase tracking-tighter text-white leading-none mt-4 p-4">
+              <div className={`absolute inset-0 p-16 flex flex-col transition-all duration-500 ${isHovered ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-10 pointer-events-none"}`}>
+                <div className="flex justify-between items-start mb-12">
+                  <div className="space-y-4">
+                    <span className="text-blue-500 font-mono text-xs tracking-[0.4em] font-black uppercase">{service.subtitle}</span>
+                    <h3 className="text-6xl font-black tracking-tighter text-white uppercase leading-[0.8]">
                       {service.title.split(' ')[0]} <br />
-                      <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-white/20 italic">{service.title.split(' ').slice(1).join(' ')}</span>
+                      <span className="text-blue-600 italic font-light">{service.title.split(' ').slice(1).join(' ')}</span>
                     </h3>
                   </div>
-                  <div className="w-16 h-16 rounded-2xl border border-white/10 flex items-center justify-center group-hover:bg-blue-600 transition-all duration-500">
-                    <ArrowUpRight className="text-white" />
-                  </div>
+                  <motion.div 
+                    whileHover={{ rotate: 45 }}
+                    className="w-20 h-20 rounded-3xl border border-white/10 flex items-center justify-center bg-white/5 backdrop-blur-xl"
+                  >
+                    <ArrowUpRight size={32} className="text-white" />
+                  </motion.div>
                 </div>
-                <div className="grid grid-cols-2 gap-12 flex-grow items-end">
-                  <div className="space-y-12 pb-6">
+
+                <div className="grid grid-cols-2 gap-16 items-end mt-auto">
+                  <div className="space-y-12">
                     <div className="space-y-4">
                       {service.details.services.map((item, index) => (
-                        <div key={index} className="text-sm font-bold text-white/80 flex items-center gap-4 hover:text-blue-400 transition-colors">
-                          <div className="w-1.5 h-1.5 rounded-full bg-blue-600 shadow-[0_0_10px_rgba(147,51,234,0.5)]" /> 
+                        <motion.div 
+                          key={index} 
+                          initial={{ opacity: 0, x: -20 }}
+                          animate={isHovered ? { opacity: 1, x: 0 } : {}}
+                          transition={{ delay: index * 0.1 }}
+                          className="text-2xl font-black text-white/90 flex items-center gap-4 hover:text-blue-500 transition-colors"
+                        >
+                          <div className="w-2 h-2 rounded-full bg-blue-600" /> 
                           {item}
-                        </div>
+                        </motion.div>
                       ))}
                     </div>
-                    <p className="text-sm font-medium text-white/40 leading-relaxed max-w-sm font-mono uppercase tracking-tight">{service.details.description}</p>
+                    <p className="text-xs font-bold text-white/30 leading-relaxed max-w-sm uppercase tracking-widest font-mono">
+                      {service.details.description}
+                    </p>
                   </div>
-                  <div className="relative rounded-[2.5rem] overflow-hidden border border-white/10 aspect-[4/5] shadow-2xl">
-                    <img src={service.details.image} alt={service.title} className="w-full h-full object-cover grayscale brightness-50 hover:grayscale-0 hover:brightness-100 transition-all duration-1000" />
-                  </div>
+
+                  {/* Right Image with Mask Effect */}
+                  <motion.div 
+                    initial={{ clipPath: "inset(100% 0 0 0)" }}
+                    animate={isHovered ? { clipPath: "inset(0% 0 0 0)" } : {}}
+                    transition={{ duration: 0.8, delay: 0.2 }}
+                    className="relative rounded-[3rem] overflow-hidden border border-white/10 aspect-[4/5] group-hover:shadow-[0_0_50px_rgba(37,99,235,0.2)]"
+                  >
+                    <motion.img 
+                      whileHover={{ scale: 1.1 }}
+                      transition={{ duration: 1.5 }}
+                      src={service.details.image} 
+                      alt={service.title} 
+                      className="w-full h-full object-contaion grayscale brightness-50 group-hover:grayscale-0 group-hover:brightness-100 transition-all duration-700" 
+                    />
+                  </motion.div>
                 </div>
               </div>
             </motion.div>
@@ -142,46 +164,27 @@ export default function ServicesGrid() {
         })}
       </div>
 
-      {/* --- MOBILE VIEW (Crispy List) --- */}
-      <div className="lg:hidden flex flex-col gap-4">
+      {/* --- MOBILE LIST --- */}
+      <div className="lg:hidden flex flex-col gap-6">
         {services.map((service, idx) => (
-          <motion.div 
-            key={service.id}
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: idx * 0.1 }}
-            className="bg-[#080808] border border-white/5 rounded-3xl p-6 relative overflow-hidden group"
-          >
-            <div className="flex justify-between items-start relative z-10">
-              <div className="space-y-4">
-                <span className="text-blue-500  text-[10px] tracking-widest font-lite">{service.number} // {service.subtitle}</span>
-                <h3 className="text-2xl lowercase  text-white  tracking-tighter font-semibold leading-tight">
-                  {service.title}
-                </h3>
-                <div className="flex flex-wrap gap-2">
-                  {service.details.services.slice(0, 2).map((s, i) => (
-                    <span key={i} className="text-[9px] border border-white/10 px-2 py-1 rounded-full text-white/40 font-mono">
-                      {s}
-                    </span>
-                  ))}
-                </div>
+          <div key={service.id} className="bg-white/[0.02] border border-white/5 rounded-[2.5rem] p-8 space-y-6">
+            <div className="flex justify-between items-start">
+              <div>
+                <span className="text-blue-500 font-mono text-[10px] tracking-widest uppercase">{service.number} // {service.subtitle}</span>
+                <h3 className="text-4xl font-black text-white tracking-tighter uppercase mt-2">{service.title}</h3>
               </div>
-              <div className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center">
-                <ArrowUpRight size={18} className="text-blue-500" />
-              </div>
+              <ArrowUpRight className="text-blue-500" />
             </div>
-            
-            {/* Soft background image preview for mobile */}
-            <div className="absolute right-[-10%] bottom-[-20%] w-32 h-32 opacity-20 blur-2xl bg-blue-600 rounded-full" />
-          </motion.div>
+            <div className="grid grid-cols-2 gap-4">
+              <div className="space-y-2">
+                {service.details.services.map((s, i) => (
+                  <div key={i} className="text-[10px] font-bold text-white/40 uppercase">{s}</div>
+                ))}
+              </div>
+              <img src={service.details.image} className="rounded-2xl h-24 w-full object-cover grayscale" />
+            </div>
+          </div>
         ))}
-        
-        {/* Mobile "See All" Call to action */}
-        <div className="mt-4 p-6 rounded-3xl border border-dashed border-white/10 flex items-center justify-between bg-white/2 transition-colors">
-          <span className="text-xs font-mono text-white/40 uppercase tracking-widest">Explore Full Technical Stack</span>
-          <ChevronRight size={16} className="text-white/20" />
-        </div>
       </div>
     </div>
   )

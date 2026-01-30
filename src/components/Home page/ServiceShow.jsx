@@ -78,7 +78,7 @@ const ServicesShowcase = () => {
   const displayServices = useMemo(() => [...services, ...services, ...services], []);
 
   return (
-    <section ref={containerRef} className="min-h-screen w-full bg-[#030303] text-white py-24 overflow-hidden selection:bg-blue-500">
+    <section ref={containerRef} className="min-h-screen w-full bg-[#030303] text-white py-24 overflow-hidden selection:bg-blue-300">
       
       {/* --- BACKGROUND DECOR --- */}
       <div className="absolute top-0 left-0 w-full h-full pointer-events-none">
@@ -89,7 +89,7 @@ const ServicesShowcase = () => {
       <div className="relative z-10">
         {/* Header */}
         <div className="px-6 md:px-20 mb-20">
-          <motion.span className="text-blue-500 font-mono text-xs tracking-[0.5em] capatalize mb-4 block reveal-text">
+          <motion.span className="text-blue-300 font-mono text-xs tracking-[0.5em] capatalize mb-4 block reveal-text">
             // Core Capabilities
           </motion.span>
           <h2 className="text-5xl md:text-[5vw] font-lite capatalize tracking-tighter leading-[0.8] reveal-text">
@@ -167,12 +167,12 @@ const ServicesShowcase = () => {
                   </p>
                 </div>
 
-                <div className="p-8 rounded-[2.5rem] bg-gradient-to-br from-blue-500 to-indigo-700 text-white shadow-2xl shadow-blue-500/20">
+                <div className="p-8 rounded-[2.5rem] bg-[#2148AA] text-white shadow-2xl shadow-blue-500/20">
                    <div className="text-[10px] font-lite capatalize tracking-[0.2em] mb-2 opacity-70">Investment Range</div>
-                   <div className="text-4xl font-lite tracking-tighter mb-4">{active.pricing}</div>
-                   <button className="w-full py-4 bg-white text-black rounded-2xl text-[10px] font-lite capatalize tracking-widest flex items-center justify-center gap-2 hover:bg-black hover:text-white transition-all">
+                   
+                   <a href="/contact-us" className="w-full py-4 bg-white text-black rounded-2xl text-[10px] font-lite capatalize tracking-widest flex items-center justify-center gap-2 hover:bg-black hover:text-white transition-all">
                      Initialize Project <ArrowRight size={14} />
-                   </button>
+                   </a>
                 </div>
               </div>
 
@@ -217,7 +217,7 @@ const SpecCard = ({ title, items, icon }) => (
     <ul className="space-y-4">
       {items.map((item, i) => (
         <li key={i} className="text-sm text-gray-400 font-medium leading-tight flex items-start gap-3">
-          <div className="w-1 h-1 bg-blue-500 rounded-full mt-1.5" />
+          <div className="w-1 h-1 bg-blue-300 rounded-full mt-1.5" />
           {item}
         </li>
       ))}
