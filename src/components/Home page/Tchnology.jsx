@@ -76,10 +76,10 @@ const Technology = () => {
                 <div className="absolute inset-0 w-full h-[2px] bg-white/10 scan-animation pointer-events-none" />
 
                 {/* 2. CORNER ELEMENTS */}
-                <span className="absolute top-0 left-0 w-4 h-4 border-t-2 border-l-2 border-white/20 group-hover:border-blue-500 transition-colors" />
-                <span className="absolute top-0 right-0 w-4 h-4 border-t-2 border-r-2 border-white/20 group-hover:border-blue-500 transition-colors" />
-                <span className="absolute bottom-0 left-0 w-4 h-4 border-b-2 border-l-2 border-white/20 group-hover:border-blue-500 transition-colors" />
-                <span className="absolute bottom-0 right-0 w-4 h-4 border-b-2 border-r-2 border-white/20 group-hover:border-blue-500 transition-colors" />
+                <span className="absolute top-0 left-0 w-4 h-4 border-t-2 border-l-2 border-white/20 group-hover:border-blue-300 transition-colors" />
+                <span className="absolute top-0 right-0 w-4 h-4 border-t-2 border-r-2 border-white/20 group-hover:border-blue-300 transition-colors" />
+                <span className="absolute bottom-0 left-0 w-4 h-4 border-b-2 border-l-2 border-white/20 group-hover:border-blue-300 transition-colors" />
+                <span className="absolute bottom-0 right-0 w-4 h-4 border-b-2 border-r-2 border-white/20 group-hover:border-blue-300 transition-colors" />
 
                 {/* Card Content */}
                 <div className="relative z-10">
@@ -106,9 +106,9 @@ const Technology = () => {
 
                 {/* 3. CYBER LINES (Tere purane code wala feel) */}
                 <div className="absolute bottom-4 right-4 flex gap-1 opacity-20 group-hover:opacity-100 transition-all">
-                  <div className="w-1 h-4 bg-blue-500/50 animate-bounce" style={{ animationDelay: '0.1s' }} />
-                  <div className="w-1 h-6 bg-blue-500/50 animate-bounce" style={{ animationDelay: '0.2s' }} />
-                  <div className="w-1 h-3 bg-blue-500/50 animate-bounce" style={{ animationDelay: '0.3s' }} />
+                  <div className="w-1 h-4 bg-blue-300/50 animate-bounce" style={{ animationDelay: '0.1s' }} />
+                  <div className="w-1 h-6 bg-blue-300/50 animate-bounce" style={{ animationDelay: '0.2s' }} />
+                  <div className="w-1 h-3 bg-blue-300/50 animate-bounce" style={{ animationDelay: '0.3s' }} />
                 </div>
 
               </div>

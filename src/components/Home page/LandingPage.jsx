@@ -31,6 +31,8 @@ const PremiumLanding = () => {
         <OfferStrip />
       </div>
 
+``
+
       {/* --- CINEMATIC GRAIN & NOISE OVERLAY --- */}
       <div className="fixed inset-0 z-[1] opacity-[0.03] pointer-events-none bg-[url('https://grainy-gradients.vercel.app/noise.svg')]" />
 

@@ -160,7 +160,7 @@ const ServicesShowcase = () => {
                   </div>
                   <h2 className="text-5xl md:text-7xl font-lite capatalize tracking-tighter leading-none mb-8">
                     {active.title.split(' ')[0]} <br /> 
-                    <span className="text-white/30 italic">{active.title.split(' ')[1] || "Solution"}</span>
+                    <span className="text-white/30 italic">{active.title || "Solution"}</span>
                   </h2>
                   <p className="text-xl text-gray-400 leading-relaxed font-light italic border-l border-blue-500/50 pl-8">
                     {active.shortDescription}

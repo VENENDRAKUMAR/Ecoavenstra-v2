@@ -126,6 +126,7 @@ const Footer = () => {
                 key={i} 
                 href={item.link}
                 target="_blank"
+                animate={{ rotate: 360 }}
                 rel="noopener noreferrer"
                 whileHover={{ y: -5, scale: 1.1 }}
                 className="w-10 h-10 flex items-center justify-center rounded-xl bg-white/[0.03] border border-white/5 text-gray-400 transition-all cursor-pointer"
@@ -137,6 +138,8 @@ const Footer = () => {
               </motion.a>
             ))}
           </div>
+
+
 
         </div>
       </div>

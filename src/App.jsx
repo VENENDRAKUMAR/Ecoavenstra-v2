@@ -56,6 +56,7 @@ function App() {
       <ScrollToTop />
       
       <Navbar/>
+      
       <Analytics/>
       
       <Routes>

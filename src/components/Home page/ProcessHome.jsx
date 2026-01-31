@@ -77,7 +77,7 @@ const App = () => {
                   drag
                   dragSnapToOrigin={true} // Drag ke baad wapas apni jagah aa jayega
                   dragConstraints={{ left: -100, right: 100, top: -100, bottom: 100 }}
-                  whileDrag={{ scale: 1.1, zIndex: 100, rotate: 0 }}
+                  whileDrag={{ scale: 1.1, zIndex: 100, rotate: 720 }}
                   layout // Smooth reordering on mobile auto-flip
                   animate={{
                     y: [orderIndex * 12, orderIndex * 12 - 15, orderIndex * 12],
@@ -129,7 +129,7 @@ const App = () => {
                   <motion.div 
                     initial={{ width: 0 }}
                     animate={{ width: "60px" }}
-                    className="h-1 bg-blue-600 mb-8 rounded-full" 
+                    className="h-1 bg-blue-300 mb-8 rounded-full" 
                   />
                   <h4 className="text-4xl md:text-5xl font-bold mb-6 tracking-tight">
                     {steps[activeIndex].title}
@@ -143,12 +143,12 @@ const App = () => {
                 <div className="relative z-10">
                     <div className="flex justify-between items-end mb-4">
                         <span className="text-xs font-mono text-white/20 tracking-widest uppercase">Phase Progress</span>
-                        <span className="text-xs font-mono text-blue-500">{(activeIndex + 1) * 20}%</span>
+                        <span className="text-xs font-mono text-blue-300">{(activeIndex + 1) * 20}%</span>
                     </div>
                     <div className="w-full h-1 bg-white/5 rounded-full overflow-hidden">
                         <motion.div 
                             key={`bar-${activeIndex}`}
-                            className="h-full bg-blue-600" 
+                            className="h-full bg-blue-300" 
                             initial={{ width: 0 }}
                             animate={{ width: "100%" }}
                             transition={{ duration: 4, ease: "linear" }}
@@ -166,7 +166,7 @@ const App = () => {
                 key={i}
                 onClick={() => setActiveIndex(i)}
                 className={`h-1.5 rounded-full transition-all duration-700 ${
-                  activeIndex === i ? 'w-12 bg-blue-500' : 'w-3 bg-white/10 hover:bg-white/30'
+                  activeIndex === i ? 'w-12 bg-blue-300' : 'w-3 bg-white/10 hover:bg-white/30'
                 }`}
               />
             ))}

@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { 
-  ExternalLink, 
   ChevronLeft, 
   ChevronRight, 
   Globe, 
@@ -9,11 +8,8 @@ import {
   MonitorPlay, 
   Camera, 
   Briefcase, 
-  TrendingUp,
   MapPin,
   User,
-  Zap,
-  MousePointer2,
   Hotel,
   Megaphone,
   Building2,
@@ -22,8 +18,7 @@ import {
 } from "lucide-react";
 
 const projects = [
-
- {
+  {
     id: 1,
     title: "Ecoavenstra",
     category: "Full-Stack Solution",
@@ -33,8 +28,7 @@ const projects = [
     link: "https://www.ecoavenstra.com",
     color: "#10b981",
   },
-
-    {
+  {
     id: 2,
     title: "LaisaLife",
     category: "Corporate R&D",
@@ -54,8 +48,6 @@ const projects = [
     link: "https://vbizgro.com",
     color: "#8b5cf6",
   },
-
-
   {
     id: 4,
     title: "Urban Kind",
@@ -63,7 +55,6 @@ const projects = [
     icon: <Hotel className="w-5 h-5" />,
     description: "Seamless hotel room booking experience with premium lifestyle integration and luxury stays.",
     image: "https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=2070&auto=format&fit=crop",
-    localPath: "/images/Urban.png",
     link: "#",
     color: "#10b981",
   },
@@ -74,120 +65,98 @@ const projects = [
     icon: <Megaphone className="w-5 h-5" />,
     description: "A dynamic platform for video advertising and digital marketing agency management.",
     image: "https://images.unsplash.com/photo-1551434678-e076c223a692?q=80&w=2070&auto=format&fit=crop",
-    localPath: "/images/vdoads.png",
     link: "#",
     color: "#f59e0b",
   },
   {
-    id: 5,
+    id: 6,
     title: "Prestige Estate",
     category: "Real Estate",
     icon: <Building2 className="w-5 h-5" />,
     description: "Premium property management and real estate solutions for high-end luxury estates.",
     image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop",
-    localPath: "/images/PrastigeEstate.png",
     link: "#",
     color: "#8b5cf6",
   },
   {
-    id: 6,
+    id: 7,
+    title: "Pro Hiring",
+    category: "Recruitment",
+    icon: <User className="w-5 h-5" />,
+    description: "A modern platform connecting professionals with top companies for seamless hiring.",
+    image: "/images/hiring.jpg",
+    link: "#",
+    color: "#3b82f6",
+  },
+  {
+    id: 8,
     title: "LuxeEstate",
     category: "Luxury Living",
     icon: <Home className="w-5 h-5" />,
     description: "Finding your dream home in the most exclusive neighborhoods with personalized service.",
     image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2070&auto=format&fit=crop",
-    localPath: "/images/name.pmng",
     link: "#",
     color: "#ec4899",
   },
   {
-    id: 7,
+    id: 9,
     title: "Marketplace",
     category: "E-Commerce",
     icon: <ShoppingBag className="w-5 h-5" />,
     description: "A multi-vendor digital marketplace designed for modern retail and global trade scaling.",
     image: "https://images.unsplash.com/photo-1472851294608-062f824d29cc?q=80&w=2070&auto=format&fit=crop",
-    localPath: "/images/marketplace.png",
     link: "#",
-    color: "#ef4444",},
+    color: "#ef4444",
+  },
   {
-    id: 8,
+    id: 10,
     title: "RunDevlopers",
     category: "Real Estate",
     icon: <MapPin className="w-5 h-5" />,
-    description: "Premier land developers and colonizers based in Seoni, MP, focused on modern community building.",
+    description: "Premier land developers and colonizers focused on modern community building.",
     image: "/images/rundevlopers.png",
     link: "https://rundevlopers.com/",
     color: "#f97316",
   },
   {
-    id:9,
+    id: 11,
     title: "Skill2Hire",
     category: "Recruitment",
     icon: <Briefcase className="w-5 h-5" />,
-    description: "Bridging the gap between eco-conscious talent and recruiters with specialized hiring solutions.",
+    description: "Bridging the gap between eco-conscious talent and recruiters.",
     image: "/images/skill2Hire.png",
     link: "https://ecojobboard.vercel.app/",
     color: "#6366f1",
   },
-    {
-    id: 10,
+  {
+    id: 12,
     title: "PhotoFolio",
     category: "Photography Cloud",
     icon: <Camera className="w-5 h-5" />,
-    description: "Premium web application designed for photographers to securely store and share high-res memories.",
+    description: "Premium web application for photographers to store and share high-res memories.",
     image: "/images/photofolio.png",
     link: "https://photo-folio-gold.vercel.app/",
     color: "#f43f5e",
-  },
-
-
-
-  {
-    id: 11,
-    title: "iPod Classic",
-    category: "Fin-Tech",
-    icon: <TrendingUp className="w-5 h-5" />,
-    description: "Sophisticated trading visualizer for real-time stock market analysis and portfolio management.",
-    image: "/images/ipod1.png",
-    link: "https://ipod-classic-two.vercel.app/",
-    color: "#06b6d4",
-  },
-  // {
-  //   id: 12,
-  //   title: "Venedra Kumar",
-  //   category: "Founder Portfolio",
-  //   icon: <User className="w-5 h-5" />,
-  //   description: "Official portfolio of Venedra Kumar, showcasing visionary leadership and strategic tech innovation.",
-  //   image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1974&auto=format&fit=crop",
-  //   link: "https://venedra-kumar.vercel.app/",
-  //   color: "#3b82f6",
-  // },
-  // {
-  //   id: 13,
-  //   title: "Rahul Patle",
-  //   category: "Developer Showcase",
-  //   icon: <Zap className="w-5 h-5" />,
-  //   description: "A creative digital space for Rahul Patle, highlighting cutting-edge web development and coding solutions.",
-  //   image: "/images/Rahul.png",
-  //   link: "https://www.rahulpatle.xyz/",
-  //   color: "#f59e0b",
-  // }
- 
-
-
-
-
+  }
 ];
 
 const App = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [direction, setDirection] = useState(0);
 
+  // Function to change slides
   const paginate = useCallback((newDirection) => {
     setDirection(newDirection);
     setCurrentIndex((prev) => (prev + newDirection + projects.length) % projects.length);
   }, []);
+
+  // --- AUTO SCROLL LOGIC ---
+  useEffect(() => {
+    const timer = setInterval(() => {
+      paginate(1);
+    }, 5000); // Changes every 5 seconds
+    return () => clearInterval(timer);
+  }, [paginate]);
 
   // Keyboard navigation
   useEffect(() => {
@@ -199,71 +168,65 @@ const App = () => {
     return () => window.removeEventListener("keydown", handleKeyDown);
   }, [paginate]);
 
+  // Clean horizontal slide variants
   const slideVariants = {
     enter: (direction) => ({
-      x: direction > 0 ? 1000 : -1000,
-      rotateY: direction > 0 ? 45 : -45,
-      opacity: 0,
-      scale: 0.5,
+      x: direction > 0 ? 500 : -500,
+      opacity: 0
     }),
     center: {
       zIndex: 1,
       x: 0,
-      rotateY: 0,
       opacity: 1,
-      scale: 1,
       transition: {
         x: { type: "spring", stiffness: 300, damping: 30 },
-        opacity: { duration: 0.5 },
-        scale: { duration: 0.5 },
-        rotateY: { duration: 0.5 }
+        opacity: { duration: 0.4 }
       },
     },
     exit: (direction) => ({
       zIndex: 0,
-      x: direction < 0 ? 1000 : -1000,
-      rotateY: direction < 0 ? 45 : -45,
+      x: direction < 0 ? 500 : -500,
       opacity: 0,
-      scale: 0.5,
-      transition: { duration: 0.5 },
+      transition: { duration: 0.4 }
     }),
   };
 
   return (
-    <div className="min-h-screen bg-[#020202] text-white flex flex-col font-sans selection:bg-blue-500 overflow-x-hidden">
+    <div className="min-h-screen bg-[#020202] text-white flex flex-col font-sans selection:bg-blue-500 overflow-hidden">
       
-      {/* 3D Background Glow */}
+      {/* Background Glow - No noise/grain for cleaner look */}
       <div className="fixed inset-0 pointer-events-none">
         <div 
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full opacity-20 blur-[120px] transition-colors duration-1000"
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full opacity-10 blur-[120px] transition-colors duration-1000"
           style={{ backgroundColor: projects[currentIndex].color }}
         />
-        <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-10 mix-blend-overlay" />
       </div>
 
-    
-
       <main className="flex-1 relative z-10 flex flex-col justify-center px-6 md:px-12 py-10">
-        
-        {/* Project Section with Perspective */}
-        <div className="max-w-7xl mx-auto w-full" style={{ perspective: "2000px" }}>
+        <div className="max-w-7xl mx-auto w-full">
           
+          {/* Project Title and Category */}
           <div className="mb-12">
             <motion.p 
               key={`cat-${currentIndex}`}
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
               className="text-blue-500 font-mono text-[10px] uppercase tracking-[0.5em] mb-4"
             >
               {projects[currentIndex].category}
             </motion.p>
-            <h1 className="text-5xl md:text-8xl font-black tracking-tighter leading-none">
+            <motion.h1 
+              key={`title-${currentIndex}`}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              className="text-5xl md:text-8xl font-black tracking-tighter leading-none"
+            >
               {projects[currentIndex].title}
-            </h1>
+            </motion.h1>
           </div>
 
-          <div className="relative h-[400px] md:h-[600px]">
-            <AnimatePresence initial={false} custom={direction}>
+          <div className="relative h-[450px] md:h-[550px] flex items-center">
+            <AnimatePresence initial={false} custom={direction} mode="wait">
               <motion.div
                 key={currentIndex}
                 custom={direction}
@@ -273,59 +236,43 @@ const App = () => {
                 exit="exit"
                 className="absolute inset-0 flex flex-col lg:flex-row gap-10 items-center"
               >
-                {/* Image Card with Hover 3D */}
-                <motion.div 
-                  className="w-full lg:w-3/5 aspect-video relative group cursor-none"
-                  whileHover={{ scale: 1.02 }}
-                >
-                  <div className="absolute inset-0 rounded-3xl overflow-hidden shadow-2xl shadow-black/50 border border-white/10">
-                    <img 
-                      src={projects[currentIndex].image} 
-                      alt={projects[currentIndex].title}
-                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-                  </div>
-                  
-                  {/* Custom Cursor Overlay for visual flair */}
-                  <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <div className="bg-white text-black p-4 rounded-full flex items-center gap-2 font-bold text-xs uppercase tracking-tighter">
-                      <MousePointer2 size={14} /> View Project
-                    </div>
-                  </div>
-                </motion.div>
+                {/* Image Container */}
+                <div className="w-full lg:w-3/5 aspect-video relative rounded-3xl overflow-hidden shadow-2xl border border-white/10">
+                  <img 
+                    src={projects[currentIndex].image} 
+                    alt={projects[currentIndex].title}
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+                </div>
 
-                {/* Description & Links */}
+                {/* Text Content */}
                 <div className="w-full lg:w-2/5 flex flex-col justify-center">
-                  <motion.p 
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ delay: 0.3 }}
-                    className="text-gray-400 text-lg md:text-xl leading-relaxed mb-10 max-w-md"
-                  >
+                  <p className="text-gray-400 text-lg md:text-xl leading-relaxed mb-10 max-w-md">
                     {projects[currentIndex].description}
-                  </motion.p>
+                  </p>
 
                   <div className="flex flex-wrap gap-4 items-center">
                     <a 
                       href={projects[currentIndex].link}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="px-8 py-4 bg-white text-black rounded-full font-bold text-xs uppercase tracking-widest hover:bg-blue-500 hover:text-white transition-all transform active:scale-95"
+                      className="px-8 py-4 bg-white text-black rounded-full font-bold text-xs uppercase tracking-widest hover:bg-blue-600 hover:text-white transition-all transform active:scale-95"
                     >
-                      Explore Case Study
+                      Visit Project
                     </a>
                     
+                    {/* Navigation Buttons */}
                     <div className="flex gap-2">
                       <button 
                         onClick={() => paginate(-1)}
-                        className="p-4 rounded-full border border-white/10 hover:bg-white/5 transition-colors"
+                        className="p-4 rounded-full border border-white/10 hover:bg-white/5"
                       >
                         <ChevronLeft size={24} />
                       </button>
                       <button 
                         onClick={() => paginate(1)}
-                        className="p-4 rounded-full border border-white/10 hover:bg-white/5 transition-colors"
+                        className="p-4 rounded-full border border-white/10 hover:bg-white/5"
                       >
                         <ChevronRight size={24} />
                       </button>
@@ -338,33 +285,24 @@ const App = () => {
         </div>
       </main>
 
-      {/* Bottom Status Bar */}
-      <footer className="relative z-50 p-6 md:px-12 flex flex-col md:flex-row justify-between items-center gap-6 border-t border-white/5">
+      {/* Footer / Pagination Status */}
+      <footer className="relative z-50 p-6 md:px-12 flex justify-between items-center border-t border-white/5">
         <div className="flex gap-2">
           {projects.map((_, i) => (
-            <div 
+            <button 
               key={i}
-              className={`h-1 transition-all duration-500 rounded-full ${i === currentIndex ? "w-12 bg-blue-500" : "w-3 bg-white/20"}`}
+              onClick={() => {
+                setDirection(i > currentIndex ? 1 : -1);
+                setCurrentIndex(i);
+              }}
+              className={`h-1.5 transition-all duration-500 rounded-full ${i === currentIndex ? "w-12 bg-blue-500" : "w-3 bg-white/20"}`}
             />
           ))}
         </div>
-        <div className="flex items-center gap-6 font-mono text-[10px] tracking-widest text-white/40 uppercase">
-          <div className="flex items-center gap-2">
-            <span className="text-white">Active</span>
-            <div className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" />
-          </div>
-          <div>Project {currentIndex + 1} / {projects.length}</div>
-          <div className="hidden md:block">© 2024 Portfolio Lab</div>
+        <div className="font-mono text-[10px] tracking-widest text-white/40 uppercase">
+          Project {currentIndex + 1} / {projects.length}
         </div>
       </footer>
-
-      <style jsx global>{`
-        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;400;700;800&family=JetBrains+Mono&display=swap');
-        body { background: #020202; }
-        ::-webkit-scrollbar { width: 4px; }
-        ::-webkit-scrollbar-track { background: transparent; }
-        ::-webkit-scrollbar-thumb { background: #333; border-radius: 10px; }
-      `}</style>
     </div>
   );
 };

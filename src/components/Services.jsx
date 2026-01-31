@@ -92,7 +92,7 @@ const ServicesHero = () => {
           <div className="text-5xl font-light text-white/20 italic tracking-tighter">WHAT WE DO</div>
           <div className="md:col-span-2">
             <p className="text-xl md:text-2xl text-gray-400 leading-relaxed font-light">
-              Grow your brand with high-impact design   ,    Digital  Solutions social media strategy, and digital marketing. At <span className="text-white font-lite border-b border-blue-500">Ecoavenstra</span>, we create visuals, websites,Web Solutions,Saas solutions,Mobile Development, software Solutions, and campaigns that build trust and drive real business growth.
+              Grow your brand with high-impact design, Digital  Solutions, Social Media strategy, and Digital Marketing. At <span className="text-white font-lite border-b border-blue-500">Ecoavenstra</span>, we create visuals, Websites, Web Solutions, SAAS  Solutions, Mobile Development, Software Solutions, and Campaigns that build trust and drive real business growth.
             </p>
           </div>
         </div>
