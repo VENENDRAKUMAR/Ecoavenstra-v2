@@ -119,7 +119,7 @@ const About = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
               { img: team2, name: "Neelu Bhagat.", role: "CEO & DIRECTOR", color: "from-cyan-500" },
-              { img: team1, name: "Venendra Kumar", role: " Project TECH LEAD ENGINEER", color: "from-blue-600" },
+              { img: team1, name: "Venendra Kumar", role: "SR. TECHNICAL RECRUITER", color: "from-blue-600" },
               { img: team2, name: "Khusbhu Parihar", role: "DIRECTOR", color: "from-purple-600" },
               { img: team3, name: "Rahul ", role: "FULL STACK DEV", color: "from-emerald-500" },
               {img: team3, name: "Roopam .", role: "Software Engineer (Mobile)", color: "from-pink-500" },
