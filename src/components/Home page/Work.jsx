@@ -118,16 +118,16 @@ const projects = [
     link: "https://rundevlopers.com/",
     color: "#f97316",
   },
-  {
-    id: 11,
-    title: "Skill2Hire",
-    category: "Recruitment",
-    icon: <Briefcase className="w-5 h-5" />,
-    description: "Bridging the gap between eco-conscious talent and recruiters.",
-    image: "/images/skill2Hire.png",
-    link: "https://ecojobboard.vercel.app/",
-    color: "#6366f1",
-  },
+  // {
+  //   id: 11,
+  //   title: "Skill2Hire",
+  //   category: "Recruitment",
+  //   icon: <Briefcase className="w-5 h-5" />,
+  //   description: "Bridging the gap between eco-conscious talent and recruiters.",
+  //   image: "/images/skill2Hire.png",
+  //   link: "https://ecojobboard.vercel.app/",
+  //   color: "#6366f1",
+  // },
   {
     id: 12,
     title: "PhotoFolio",
@@ -137,6 +137,46 @@ const projects = [
     image: "/images/photofolio.png",
     link: "https://photo-folio-gold.vercel.app/",
     color: "#f43f5e",
+  },
+  {
+    id: 13,
+    title: "HireSKL",
+    category: "Recruitment Platform",
+    icon: <Briefcase className="w-5 h-5" />,
+    description: "A skill-focused hiring platform that helps employers connect with qualified talent and streamline recruitment.",
+    image: "/images/hireskl.png",
+    link: "#",
+    color: "#0ea5e9",
+  },
+  {
+    id: 14,
+    title: "InsurePro",
+    category: "Insurance Agency",
+    icon: <Building2 className="w-5 h-5" />,
+    description: "A professional insurance agency website that helps customers explore coverage options and connect with an advisor.",
+    image: "/images/insurepro.jpg",
+    link: "#",
+    color: "#2563eb",
+  },
+  {
+    id: 15,
+    title: "Savora",
+    category: "Restaurant Booking & Ordering",
+    icon: <ShoppingBag className="w-5 h-5" />,
+    description: "A restaurant platform where guests can discover dining options, book tables, and place orders online.",
+    image: "/images/savora.jpg",
+    link: "#",
+    color: "#f97316",
+  },
+  {
+    id: 16,
+    title: "SkillVerify",
+    category: "Talent Verification & Hiring",
+    icon: <User className="w-5 h-5" />,
+    description: "A talent verification platform that helps candidates showcase proven skills and helps recruiters find qualified people and hire more easily.",
+    image: "/images/skillverify.jpg",
+    link: "#",
+    color: "#8b5cf6",
   }
 ];
 
@@ -237,7 +277,7 @@ const App = () => {
                 className="absolute inset-0 flex flex-col lg:flex-row gap-10 items-center"
               >
                 {/* Image Container */}
-                <div className="w-full lg:w-3/5 aspect-video relative rounded-3xl overflow-hidden shadow-2xl border border-white/10">
+                <div className="w-full lg:w-3/5 aspect-video relative rounded-3xl overflow shadow-2xl border border-white/10">
                   <img 
                     src={projects[currentIndex].image} 
                     alt={projects[currentIndex].title}
